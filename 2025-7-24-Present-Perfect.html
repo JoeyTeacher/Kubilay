@@ -1,153 +1,42 @@
-import React from 'react';
-
-// Icons (simplified for direct SVG inclusion)
-const BookTextIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-book-text">
-    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/><path d="M10 8h6"/><path d="M10 12h6"/><path d="M10 16h6"/>
-  </svg>
-);
-
-const MessageSquareTextIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-message-square-text">
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M10 8h4"/><path d="M10 12h4"/>
-  </svg>
-);
-
-const GraduationCapIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-graduation-cap">
-    <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.084a1 1 0 0 0 0 1.838l8.57 3.838a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
-  </svg>
-);
-
-const Volume2Icon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-volume-2">
-    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
-  </svg>
-);
-
-const ArrowRightIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right">
-    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-  </svg>
-);
-
-const CheckCircleIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-circle">
-    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/>
-  </svg>
-);
-
-const XCircleIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x-circle">
-    <circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/>
-  </svg>
-);
-
-const TargetIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-target">
-    <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
-  </svg>
-);
-
-const SpeechIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-speech">
-    <path d="M9 18H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3l-4 4v-4Z"/>
-  </svg>
-);
-
-const CheckSquareIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-square">
-    <rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 12 2 2 4-4"/>
-  </svg>
-);
-
-const MicIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mic">
-    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/>
-  </svg>
-);
-
-const LightbulbIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lightbulb">
-    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/><path d="M11 17v5"/><path d="M12 12V5"/>
-  </svg>
-);
-
-
-const App = () => {
-  const grammarExamples = [
-    {
-      used: "I have been to play football.",
-      usedHtml: `I have <span class="line-through text-red-600">been to play</span> football.`,
-      corrected: "I have played football.",
-      correctedHtml: `I have <span class="font-bold text-green-600">played</span> football.`
-    },
-    {
-      used: "I have had lots of parks.",
-      usedHtml: `I have <span class="line-through text-red-600">had lots of parks</span>.`,
-      corrected: "I have been to many parks.",
-      correctedHtml: `I have <span class="font-bold text-green-600">been to many parks</span>.`
-    },
-    {
-      used: "I seen many TV series.",
-      usedHtml: `I <span class="line-through text-red-600">seen</span> many <span class="line-through text-red-600">series</span>.`,
-      corrected: "I have seen many TV series.",
-      correctedHtml: `I <span class="font-bold text-green-600">have seen</span> many <span class="font-bold text-green-600">TV series</span>.`
-    },
-    {
-      used: "I've drank 20 beers this week.",
-      usedHtml: `I've <span class="line-through text-red-600">drank</span> 20 beers <u class="no-underline">this week</u>.`,
-      corrected: "I've drunk about 20 beers this week.",
-      correctedHtml: `I've <span class="font-bold text-green-600">drunk</span> <span class="font-bold">about</span> 20 beers <u class="no-underline">this week</u>.`
-    },
-  ];
-
-  const expressions = [
-    { expr: `"What have you been up to?"`, desc: `A very common way to ask 'What have you done recently?'`, examples: [`"Hey, long time no see! What have you been up to?"`] },
-    { expr: `"Once or twice a month/week"`, desc: `Great for talking about habits.`, examples: [`"I go to the gym once or twice a week."`, `"I've only been to that restaurant once or twice."`, `"I smoke once or twice a week."`] },
-    { expr: `"I smoke about a pack a day"`, desc: `Use <span class="underline font-bold">about</span> to mean approximately.`, examples: [`"My grandfather used to smoke <span class="underline font-bold">about</span> a pack a day."`, `"I go to the cinema <span class="underline font-bold">about</span> twice a month."`] }, // Modified
-    { expr: `"You must love..."`, desc: `To make a guess about someone's feelings.`, examples: [`"You spend so much time in the garden, you must love gardening!"`] },
-    { expr: `"When do you want to meet?" / "When shall we meet?"`, desc: `Useful for making plans.`, examples: [`"I'm free on Tuesday. When do you want to meet?"`] },
-    {
-      expr: `"The doctor told us"`,
-      desc: `Use '<span class="font-bold">told</span> us' instead of 'said to us' when delivering information or instructions.`,
-      examples: [
-        `"The doctor <span class="font-bold">told</span> us not to worry."`,
-        `"My girlfriend <span class="font-bold">told</span> me to wait for her outside the pub."`,
-        `"My boss <span class="font-bold">told</span> me to get my reports in by Friday."`
-      ]
-    },
-  ];
-
-  const quWords = ['quick', 'query', 'question', 'quarantine'];
-  const voicedThWords = ['this', 'that', 'these', 'those', 'they'];
-  const unvoicedThWords = ['think', 'thank', 'through', 'thing', 'three'];
-
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 font-inter p-4 sm:p-8 flex items-center justify-center">
-      <div className="max-w-4xl w-full bg-white rounded-xl shadow-2xl overflow-hidden">
-        {/* Header Section */}
-        <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 sm:p-8 rounded-t-xl text-center">
-          <h1 className="text-3xl sm:text-4xl font-extrabold mb-2 tracking-tight">
-            <span className="block">Feedback Report for Kubilay</span>
-            <span className="block text-xl sm:text-2xl font-semibold opacity-90">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubilay's English Lesson Feedback</title>
+    <!-- Include Tailwind CSS from CDN - CRUCIAL FOR STYLING -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Ensure Inter font is used */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 font-inter p-4 sm:p-8 flex items-center justify-center">
+      <div class="max-w-4xl w-full bg-white rounded-xl shadow-2xl overflow-hidden">
+        <!-- Header Section -->
+        <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 sm:p-8 rounded-t-xl text-center">
+          <h1 class="text-3xl sm:text-4xl font-extrabold mb-2 tracking-tight">
+            <span class="block">Feedback Report for Kubilay</span>
+            <span class="block text-xl sm:text-2xl font-semibold opacity-90">
               Lesson 1 Reflection: Practicing talking about past experiences using present perfect and past simple.
             </span>
           </h1>
-          <p className="text-blue-100 text-sm sm:text-base mt-4">
+          <p class="text-blue-100 text-sm sm:text-base mt-4">
             A summary of your first English lesson, highlighting successes and areas for growth.
           </p>
         </header>
 
-        {/* Main Content Area */}
-        <main className="p-6 sm:p-8 lg:p-10">
-          {/* Greeting */}
-          <section className="mb-8 bg-blue-50 p-5 rounded-lg border border-blue-200 shadow-md">
-            <h2 className="text-2xl font-bold text-blue-800 mb-3 flex items-center">
-              <span className="mr-2 text-blue-600 text-3xl">👋</span> Hi Kubilay!
+        <!-- Main Content Area -->
+        <main class="p-6 sm:p-8 lg:p-10">
+          <!-- Greeting -->
+          <section class="mb-8 bg-blue-50 p-5 rounded-lg border border-blue-200 shadow-md">
+            <h2 class="text-2xl font-bold text-blue-800 mb-3 flex items-center">
+              <span class="mr-2 text-blue-600 text-3xl">👋</span> Hi Kubilay!
             </h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p class="text-gray-700 leading-relaxed">
               It was great to have our first English lesson together! Thank you for your energy and for speaking so much. That's the best way to improve!
               <br/><br/>
               I know the lesson was challenging, and perhaps the level was a bit high for your current ability. But please don't worry! I will make our next lesson more suitable so we can build your skills with the Present Perfect step-by-step.
@@ -156,84 +45,173 @@ const App = () => {
             </p>
           </section>
 
-          {/* What We Focused On */}
-          <section className="mb-8">
-            <h2 className="text-3xl font-extrabold text-gray-800 mb-6 flex items-center">
-              <BookTextIcon className="text-blue-500 mr-3 w-8 h-8" /> What We Focused On
+          <!-- What We Focused On -->
+          <section class="mb-8">
+            <h2 class="text-3xl font-extrabold text-gray-800 mb-6 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-text text-blue-500 mr-3 w-8 h-8">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                <path d="M10 8h6"></path>
+                <path d="M10 12h6"></path>
+                <path d="M10 16h6"></path>
+              </svg> What We Focused On
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white p-5 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 flex items-start">
-                <CheckSquareIcon className="text-blue-400 mr-3 mt-1 flex-shrink-0" />
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-white p-5 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 flex items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-square text-blue-400 mr-3 mt-1 flex-shrink-0">
+                  <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
                 <div>
-                  <h3 className="font-semibold text-lg text-gray-700 mb-1">Talking about your week and recent activities</h3>
-                  <p className="text-gray-600 text-sm">We discussed your work schedule, your weekend, and what you've been doing lately.</p>
+                  <h3 class="font-semibold text-lg text-gray-700 mb-1">Talking about your week and recent activities</h3>
+                  <p class="text-gray-600 text-sm">We discussed your work schedule, your weekend, and what you've been doing lately.</p>
                 </div>
               </div>
-              <div className="bg-white p-5 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 flex items-start">
-                <CheckSquareIcon className="text-blue-400 mr-3 mt-1 flex-shrink-0" />
+              <div class="bg-white p-5 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 flex items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-square text-blue-400 mr-3 mt-1 flex-shrink-0">
+                  <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
                 <div>
-                  <h3 className="font-semibold text-lg text-gray-700 mb-1">Sharing past experiences</h3>
-                  <p className="text-gray-600 text-sm">You told me about having Corona, your favorite hobbies, and even some very interesting stories for our "Two Truths and a Lie" game!</p>
+                  <h3 class="font-semibold text-lg text-gray-700 mb-1">Sharing past experiences</h3>
+                  <p class="text-gray-600 text-sm">You told me about having Corona, your favorite hobbies, and even some very interesting stories for our "Two Truths and a Lie" game!</p>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Expressions We Practiced and Learned */}
-          <section className="mb-8">
-            <h2 className="text-3xl font-extrabold text-gray-800 mb-6 flex items-center">
-              <MessageSquareTextIcon className="text-green-500 mr-3 w-8 h-8" /> Expressions We Practiced & Learned
+          <!-- Expressions We Practiced and Learned -->
+          <section class="mb-8">
+            <h2 class="text-3xl font-extrabold text-gray-800 mb-6 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-text text-green-500 mr-3 w-8 h-8">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                <path d="M10 8h4"></path>
+                <path d="M10 12h4"></path>
+              </svg> Expressions We Practiced & Learned
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8">
-              {expressions.map((item, index) => (
-                <div key={index} className="bg-green-50 p-5 rounded-lg border border-green-200 shadow-sm flex flex-col items-start">
-                  <div className="flex items-center mb-2">
-                    <SpeechIcon className="text-green-600 mr-3 flex-shrink-0 w-6 h-6" />
-                    <p className="font-semibold text-lg text-gray-800">{item.expr}</p>
-                  </div>
-                  <p className="text-gray-600 text-base ml-9" dangerouslySetInnerHTML={{ __html: item.desc }}></p>
-                  {item.examples && (
-                    <ul className="list-disc list-inside text-gray-500 text-sm italic mt-3 ml-12 space-y-1">
-                      {item.examples.map((example, exIndex) => (
-                        <li key={exIndex} dangerouslySetInnerHTML={{ __html: example }}></li>
-                      ))}
-                    </ul>
-                  )}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8">
+              <div class="bg-green-50 p-5 rounded-lg border border-green-200 shadow-sm flex flex-col items-start">
+                <div class="flex items-center mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-speech text-green-600 mr-3 flex-shrink-0 w-6 h-6">
+                    <path d="M9 18H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3l-4 4v-4Z"></path>
+                  </svg>
+                  <p class="font-semibold text-lg text-gray-800">"What have you been up to?"</p>
                 </div>
-              ))}
+                <p class="text-gray-600 text-base ml-9">A very common way to ask 'What have you done recently?'</p>
+                <ul class="list-disc list-inside text-gray-500 text-sm italic mt-3 ml-12 space-y-1">
+                  <li>"Hey, long time no see! What have you been up to?"</li>
+                </ul>
+              </div>
+              <div class="bg-green-50 p-5 rounded-lg border border-green-200 shadow-sm flex flex-col items-start">
+                <div class="flex items-center mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-speech text-green-600 mr-3 flex-shrink-0 w-6 h-6">
+                    <path d="M9 18H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3l-4 4v-4Z"></path>
+                  </svg>
+                  <p class="font-semibold text-lg text-gray-800">"Once or twice a month/week"</p>
+                </div>
+                <p class="text-gray-600 text-base ml-9">Great for talking about habits.</p>
+                <ul class="list-disc list-inside text-gray-500 text-sm italic mt-3 ml-12 space-y-1">
+                  <li>"I go to the gym once or twice a week."</li>
+                  <li>"I've only been to that restaurant once or twice."</li>
+                  <li>"I smoke once or twice a week."</li>
+                </ul>
+              </div>
+              <div class="bg-green-50 p-5 rounded-lg border border-green-200 shadow-sm flex flex-col items-start">
+                <div class="flex items-center mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-speech text-green-600 mr-3 flex-shrink-0 w-6 h-6">
+                    <path d="M9 18H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3l-4 4v-4Z"></path>
+                  </svg>
+                  <p class="font-semibold text-lg text-gray-800">"I smoke about a pack a day"</p>
+                </div>
+                <p class="text-gray-600 text-base ml-9">Use <span class="underline font-bold">about</span> to mean approximately.</p>
+                <ul class="list-disc list-inside text-gray-500 text-sm italic mt-3 ml-12 space-y-1">
+                  <li>"My grandfather used to smoke <span class="underline font-bold">about</span> a pack a day."</li>
+                  <li>"I go to the cinema <span class="underline font-bold">about</span> twice a month."</li>
+                </ul>
+              </div>
+              <div class="bg-green-50 p-5 rounded-lg border border-green-200 shadow-sm flex flex-col items-start">
+                <div class="flex items-center mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-speech text-green-600 mr-3 flex-shrink-0 w-6 h-6">
+                    <path d="M9 18H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3l-4 4v-4Z"></path>
+                  </svg>
+                  <p class="font-semibold text-lg text-gray-800">"You must love..."</p>
+                </div>
+                <p class="text-gray-600 text-base ml-9">To make a guess about someone's feelings.</p>
+                <ul class="list-disc list-inside text-gray-500 text-sm italic mt-3 ml-12 space-y-1">
+                  <li>"You spend so much time in the garden, you must love gardening!"</li>
+                </ul>
+              </div>
+              <div class="bg-green-50 p-5 rounded-lg border border-green-200 shadow-sm flex flex-col items-start">
+                <div class="flex items-center mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-speech text-green-600 mr-3 flex-shrink-0 w-6 h-6">
+                    <path d="M9 18H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3l-4 4v-4Z"></path>
+                  </svg>
+                  <p class="font-semibold text-lg text-gray-800">"When do you want to meet?" / "When shall we meet?"</p>
+                </div>
+                <p class="text-gray-600 text-base ml-9">Useful for making plans.</p>
+                <ul class="list-disc list-inside text-gray-500 text-sm italic mt-3 ml-12 space-y-1">
+                  <li>"I'm free on Tuesday. When do you want to meet?"</li>
+                </ul>
+              </div>
+              <div class="bg-green-50 p-5 rounded-lg border border-green-200 shadow-sm flex flex-col items-start">
+                <div class="flex items-center mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-speech text-green-600 mr-3 flex-shrink-0 w-6 h-6">
+                    <path d="M9 18H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3l-4 4v-4Z"></path>
+                  </svg>
+                  <p class="font-semibold text-lg text-gray-800">"The doctor told us"</p>
+                </div>
+                <p class="text-gray-600 text-base ml-9">Use '<span class="font-bold">told</span> us' instead of 'said to us' when delivering information or instructions.</p>
+                <ul class="list-disc list-inside text-gray-500 text-sm italic mt-3 ml-12 space-y-1">
+                  <li>"The doctor <span class="font-bold">told</span> us not to worry."</li>
+                  <li>"My girlfriend <span class="font-bold">told</span> me to wait for her outside the pub."</li>
+                  <li>"My boss <span class="font-bold">told</span> me to get my reports in by Friday."</li>
+                </ul>
+              </div>
             </div>
           </section>
 
-          {/* Natural English Section */}
-          <section className="mb-8">
-            <h2 className="text-3xl font-extrabold text-gray-800 mb-6 flex items-center">
-              <SpeechIcon className="text-yellow-500 mr-3 w-8 h-8" /> Natural English & Fluency Tips
+          <!-- Natural English Section -->
+          <section class="mb-8">
+            <h2 class="text-3xl font-extrabold text-gray-800 mb-6 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-speech text-yellow-500 mr-3 w-8 h-8">
+                <path d="M9 18H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3l-4 4v-4Z"></path>
+              </svg> Natural English & Fluency Tips
             </h2>
-            <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200 shadow-lg space-y-4">
+            <div class="bg-yellow-50 p-6 rounded-lg border border-yellow-200 shadow-lg space-y-4">
               <div>
-                <h3 className="font-bold text-xl text-yellow-800 mb-2 flex items-center">
-                  <MicIcon className="text-yellow-600 mr-2 w-6 h-6" /> Everyday Reductions
+                <h3 class="font-bold text-xl text-yellow-800 mb-2 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mic text-yellow-600 mr-2 w-6 h-6">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" x2="12" y1="19" y2="22"></line>
+                  </svg> Everyday Reductions
                 </h3>
-                <p className="text-gray-700 mb-2">
+                <p class="text-gray-700 mb-2">
                   In natural, fast English, words often get reduced. For example:
                 </p>
-                <div className="bg-white p-3 rounded-md shadow-sm border border-gray-200">
-                  <p className="text-gray-700 font-semibold mb-1">"What have you been up to?"</p>
-                  <p className="text-gray-600 italic">Often sounds like: <span className="font-bold text-blue-600">"Whad've ya bin up to?"</span></p>
+                <div class="bg-white p-3 rounded-md shadow-sm border border-gray-200">
+                  <p class="text-gray-700 font-semibold mb-1">"What have you been up to?"</p>
+                  <p class="text-gray-600 italic">Often sounds like: <span class="font-bold text-blue-600">"Whad've ya bin up to?"</span></p>
                 </div>
               </div>
               <div>
-                <h3 className="font-bold text-xl text-yellow-800 mb-2 flex items-center">
-                  <LightbulbIcon className="text-yellow-600 mr-3 flex-shrink-0 w-6 h-6" /> Emphasizing with Sound
+                <h3 class="font-bold text-xl text-yellow-800 mb-2 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb text-yellow-600 mr-3 flex-shrink-0 w-6 h-6">
+                    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"></path>
+                    <path d="M9 18h6"></path>
+                    <path d="M10 22h4"></path>
+                    <path d="M11 17v5"></path>
+                    <path d="M12 12V5"></path>
+                  </svg> Emphasizing with Sound
                 </h3>
-                <p className="text-gray-700 mb-2">
+                <p class="text-gray-700 mb-2">
                   Sometimes, we stretch out a word's sound to add emphasis, especially with numbers or duration.
                 </p>
-                <div className="bg-white p-3 rounded-md shadow-sm border border-gray-200 flex items-center">
+                <div class="bg-white p-3 rounded-md shadow-sm border border-gray-200 flex items-center">
                   <div>
-                    <p className="text-gray-700 font-semibold mb-1">Example with "about":</p>
-                    <p className="text-gray-600 italic">"I've been living in London <span class="font-bold text-blue-600">aboooutt</span> 6 years."</p>
-                    <p className="text-gray-500 text-sm mt-1">
+                    <p class="text-gray-700 font-semibold mb-1">Example with "about":</p>
+                    <p class="text-gray-600 italic">"I've been living in London <span class="font-bold text-blue-600">aboooutt</span> 6 years."</p>
+                    <p class="text-gray-500 text-sm mt-1">
                       (Imagine drawing out the "ou" sound with your hand to show the duration/approximation.)
                     </p>
                   </div>
@@ -242,167 +220,260 @@ const App = () => {
             </div>
           </section>
 
-          {/* Grammar Focus & What We Noticed */}
-          <section className="mb-8">
-            <h2 className="text-3xl font-extrabold text-gray-800 mb-6 flex items-center">
-              <GraduationCapIcon className="text-purple-500 mr-3 w-8 h-8" /> Grammar Focus & What We Noticed
+          <!-- Grammar Focus & What We Noticed -->
+          <section class="mb-8">
+            <h2 class="text-3xl font-extrabold text-gray-800 mb-6 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap text-purple-500 mr-3 w-8 h-8">
+                <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.084a1 1 0 0 0 0 1.838l8.57 3.838a2 2 0 0 0 1.66 0z"></path>
+                <path d="M22 10v6"></path>
+                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+              </svg> Grammar Focus & What We Noticed
             </h2>
 
-            {/* Present Perfect */}
-            <div className="bg-purple-50 p-6 rounded-lg border border-purple-200 shadow-lg mb-6">
-              <h3 className="font-bold text-xl text-purple-800 mb-3 flex items-center">
-                <TargetIcon className="text-purple-600 mr-2 w-6 h-6" /> Present Perfect: An Area for Growth
+            <!-- Present Perfect -->
+            <div class="bg-purple-50 p-6 rounded-lg border border-purple-200 shadow-lg mb-6">
+              <h3 class="font-bold text-xl text-purple-800 mb-3 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target text-purple-600 mr-2 w-6 h-6">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg> Present Perfect: An Area for Growth
               </h3>
-              <p className="text-gray-700 mb-2">
+              <p class="text-gray-700 mb-2">
                 This seems to be a new or challenging area for you, especially remembering the 'past participle' form of verbs (e.g., 'eaten' instead of 'eat,' 'seen' instead of 'saw,' 'played' instead of 'play').
               </p>
-              <p className="text-gray-700 mb-4 font-semibold">
+              <p class="text-gray-700 mb-4 font-semibold">
                 This is an important component of the GESE exam, and we will practice it more.
               </p>
-              <div className="space-y-3 mb-4">
-                {grammarExamples.map((example, index) => (
-                  <div key={index} className="bg-white p-3 rounded-md shadow-sm border border-gray-200">
-                    <div className="flex items-center text-red-600 text-sm mb-1">
-                      <XCircleIcon className="w-5 h-5 mr-1" /> <span className="font-medium text-base">Your Sentence:</span>
-                    </div>
-                    <p className="ml-6 text-gray-700 italic mb-2" dangerouslySetInnerHTML={{ __html: example.usedHtml }}></p>
-                    <div className="flex items-center text-green-600 text-sm mb-1">
-                      <CheckCircleIcon className="w-5 h-5 mr-1" /> <span className="font-medium text-base">Suggested Improvement:</span>
-                    </div>
-                    <p className="ml-6 text-gray-700 font-medium" dangerouslySetInnerHTML={{ __html: example.correctedHtml }}></p>
+              <div class="space-y-3 mb-4">
+                <div class="bg-white p-3 rounded-md shadow-sm border border-gray-200">
+                  <div class="flex items-center text-red-600 text-sm mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-circle w-5 h-5 mr-1">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="m15 9-6 6"></path>
+                      <path d="m9 9 6 6"></path>
+                    </svg> <span class="font-medium text-base">Your Sentence:</span>
                   </div>
-                ))}
+                  <p class="ml-6 text-gray-700 italic mb-2">I have <span class="line-through text-red-600">been to play</span> football.</p>
+                  <div class="flex items-center text-green-600 text-sm mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle w-5 h-5 mr-1">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg> <span class="font-medium text-base">Suggested Improvement:</span>
+                  </div>
+                  <p class="ml-6 text-gray-700 font-medium">I have <span class="font-bold text-green-600">played</span> football.</p>
+                </div>
+                <div class="bg-white p-3 rounded-md shadow-sm border border-gray-200">
+                  <div class="flex items-center text-red-600 text-sm mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-circle w-5 h-5 mr-1">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="m15 9-6 6"></path>
+                      <path d="m9 9 6 6"></path>
+                    </svg> <span class="font-medium text-base">Your Sentence:</span>
+                  </div>
+                  <p class="ml-6 text-gray-700 italic mb-2">I have <span class="line-through text-red-600">had lots of parks</span>.</p>
+                  <div class="flex items-center text-green-600 text-sm mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle w-5 h-5 mr-1">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg> <span class="font-medium text-base">Suggested Improvement:</span>
+                  </div>
+                  <p class="ml-6 text-gray-700 font-medium">I have <span class="font-bold text-green-600">been to many parks</span>.</p>
+                </div>
+                <div class="bg-white p-3 rounded-md shadow-sm border border-gray-200">
+                  <div class="flex items-center text-red-600 text-sm mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-circle w-5 h-5 mr-1">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="m15 9-6 6"></path>
+                      <path d="m9 9 6 6"></path>
+                    </svg> <span class="font-medium text-base">Your Sentence:</span>
+                  </div>
+                  <p class="ml-6 text-gray-700 italic mb-2">I <span class="line-through text-red-600">seen</span> many <span class="line-through text-red-600">series</span>.</p>
+                  <div class="flex items-center text-green-600 text-sm mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle w-5 h-5 mr-1">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg> <span class="font-medium text-base">Suggested Improvement:</span>
+                  </div>
+                  <p class="ml-6 text-gray-700 font-medium">I <span class="font-bold text-green-600">have seen</span> many <span class="font-bold text-green-600">TV series</span>.</p>
+                </div>
+                <div class="bg-white p-3 rounded-md shadow-sm border border-gray-200">
+                  <div class="flex items-center text-red-600 text-sm mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-circle w-5 h-5 mr-1">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="m15 9-6 6"></path>
+                      <path d="m9 9 6 6"></path>
+                    </svg> <span class="font-medium text-base">Your Sentence:</span>
+                  </div>
+                  <p class="ml-6 text-gray-700 italic mb-2">I've <span class="line-through text-red-600">drank</span> 20 beers <u class="no-underline">this week</u>.</p>
+                  <div class="flex items-center text-green-600 text-sm mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle w-5 h-5 mr-1">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg> <span class="font-medium text-base">Suggested Improvement:</span>
+                  </div>
+                  <p class="ml-6 text-gray-700 font-medium">I've <span class="font-bold text-green-600">drunk</span> <span class="font-bold">about</span> 20 beers <u class="no-underline">this week</u>.</p>
+                </div>
               </div>
 
-              {/* Drink / Drank / Drunk explanation */}
-              <div className="bg-purple-100 p-4 rounded-md border border-purple-300 text-purple-800 shadow-md mt-4">
-                <h4 className="font-semibold text-lg mb-2">Verb Forms: Drink / Drank / Drunk</h4>
-                <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
-                  <li>Base Form: <span className="font-bold">Drink</span></li>
-                  <li>Past Simple: <span className="font-bold">Drank</span></li>
-                  <li>Past Participle: <span className="font-bold">Drunk</span></li>
+              <!-- Drink / Drank / Drunk explanation -->
+              <div class="bg-purple-100 p-4 rounded-md border border-purple-300 text-purple-800 shadow-md mt-4">
+                <h4 class="font-semibold text-lg mb-2">Verb Forms: Drink / Drank / Drunk</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                  <li>Base Form: <span class="font-bold">Drink</span></li>
+                  <li>Past Simple: <span class="font-bold">Drank</span></li>
+                  <li>Past Participle: <span class="font-bold">Drunk</span></li>
                 </ul>
-                <p className="text-gray-700 mt-3">Examples:</p>
-                <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                <p class="text-gray-700 mt-3">Examples:</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
                   <li>"I drank 11 beers yesterday." (Past simple - specific time)</li>
-                  <li>"I've drunk <span className="underline">about 16 beers this week</span>." (Present perfect - unfinished time)</li>
+                  <li>"I've drunk <span class="underline">about 16 beers this week</span>." (Present perfect - unfinished time)</li>
                 </ul>
               </div>
 
-              <div className="bg-green-100 p-4 rounded-md border border-green-300 text-green-800 shadow-md mt-4">
-                <h4 className="font-semibold text-lg mb-1">Excellent Progress!</h4>
-                <div className="flex items-start mb-1">
-                  <CheckCircleIcon className="text-green-600 mr-2 w-5 h-5 flex-shrink-0" />
-                  <p className="text-gray-700">
-                    After practice, you successfully said, <span className="italic font-medium">"I've been to Hyde Park about once a month since I moved to London."</span> This was excellent!
+              <div class="bg-green-100 p-4 rounded-md border border-green-300 text-green-800 shadow-md mt-4">
+                <h4 class="font-semibold text-lg mb-1">Excellent Progress!</h4>
+                <div class="flex items-start mb-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle text-green-600 mr-2 w-5 h-5 flex-shrink-0">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <p class="text-gray-700">
+                    After practice, you successfully said, <span class="italic font-medium">"I've been to Hyde Park about once a month since I moved to London."</span> This was excellent!
                   </p>
                 </div>
-                <div className="flex items-start mt-2">
-                  <CheckCircleIcon className="text-green-600 mr-2 w-5 h-5 flex-shrink-0" />
-                  <p className="text-gray-700">
-                    You also used "twice" correctly in sentences like: <span className="italic font-medium">"I've had Corona twice."</span>
+                <div class="flex items-start mt-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle text-green-600 mr-2 w-5 h-5 flex-shrink-0">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <path d="m9 11 3 3L22 4"></path>
+                  </svg>
+                  <p class="text-gray-700">
+                    You also used "twice" correctly in sentences like: <span class="italic font-medium">"I've had Corona twice."</span>
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Past Simple */}
-            <div className="bg-purple-50 p-6 rounded-lg border border-purple-200 shadow-lg mb-6">
-              <h3 className="font-bold text-xl text-purple-800 mb-3 flex items-center">
-                <TargetIcon className="text-purple-600 mr-2 w-6 h-6" /> Past Simple
+            <!-- Past Simple -->
+            <div class="bg-purple-50 p-6 rounded-lg border border-purple-200 shadow-lg mb-6">
+              <h3 class="font-bold text-xl text-purple-800 mb-3 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target text-purple-600 mr-2 w-6 h-6">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg> Past Simple
               </h3>
-              <p className="text-gray-700 mb-2">
+              <p class="text-gray-700 mb-2">
                 You generally use Past Simple well for specific past events, but sometimes there are small errors with irregular verbs.
               </p>
             </div>
           </section>
 
-          {/* Pronunciation */}
-          <section className="mb-8">
-            <h2 className="text-3xl font-extrabold text-gray-800 mb-6 flex items-center">
-              <Volume2Icon className="text-orange-500 mr-3 w-8 h-8" /> Pronunciation Focus
+          <!-- Pronunciation -->
+          <section class="mb-8">
+            <h2 class="text-3xl font-extrabold text-gray-800 mb-6 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-volume-2 text-orange-500 mr-3 w-8 h-8">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              </svg> Pronunciation Focus
             </h2>
-            <div className="bg-orange-50 p-6 rounded-lg border border-orange-200 shadow-lg mb-6">
-              <h3 className="font-bold text-xl text-orange-800 mb-3 flex items-center">
-                <MicIcon className="text-orange-600 mr-2 w-6 h-6" /> 'QU' Sound Practice
+            <div class="bg-orange-50 p-6 rounded-lg border border-orange-200 shadow-lg mb-6">
+              <h3 class="font-bold text-xl text-orange-800 mb-3 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mic text-orange-600 mr-2 w-6 h-6">
+                  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <line x1="12" x2="12" y1="19" y2="22"></line>
+                </svg> 'QU' Sound Practice
               </h3>
-              <p className="text-gray-700 mb-3">
-                We worked on the <span className="font-semibold">'QU' sound</span>. Here are some words we practiced:
+              <p class="text-gray-700 mb-3">
+                We worked on the <span class="font-semibold">'QU' sound</span>. Here are some words we practiced:
               </p>
-              <ul className="list-disc list-inside text-gray-700 mb-4 ml-4">
-                {quWords.map((word, index) => (
-                  <li key={index}>{word}</li>
-                ))}
+              <ul class="list-disc list-inside text-gray-700 mb-4 ml-4">
+                <li>quick</li>
+                <li>query</li>
+                <li>question</li>
+                <li>quarantine</li>
               </ul>
-              <p className="text-gray-700 font-semibold mb-2">Tongue Twister for 'QU' sound:</p>
-              <p className="text-gray-800 italic bg-orange-100 p-3 rounded-md border border-orange-300">
+              <p class="text-gray-700 font-semibold mb-2">Tongue Twister for 'QU' sound:</p>
+              <p class="text-gray-800 italic bg-orange-100 p-3 rounded-md border border-orange-300">
                 "Quickly and quietly the queen quit."
               </p>
             </div>
 
-            <div className="bg-orange-50 p-6 rounded-lg border border-orange-200 shadow-lg">
-              <h3 className="font-bold text-xl text-orange-800 mb-3 flex items-center">
-                <MicIcon className="text-orange-600 mr-2 w-6 h-6" /> 'TH' Sounds (Voiced & Unvoiced)
+            <div class="bg-orange-50 p-6 rounded-lg border border-orange-200 shadow-lg">
+              <h3 class="font-bold text-xl text-orange-800 mb-3 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mic text-orange-600 mr-2 w-6 h-6">
+                  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <line x1="12" x2="12" y1="19" y2="22"></line>
+                </svg> 'TH' Sounds (Voiced & Unvoiced)
               </h3>
-              <p className="text-gray-700 mb-3">
-                We also focused on the <span className="font-semibold">'TH' sounds</span>. It's important to remember that the 'TH' sound can be either:
+              <p class="text-gray-700 mb-3">
+                We also focused on the <span class="font-semibold">'TH' sounds</span>. It's important to remember that the 'TH' sound can be either:
               </p>
-              <ul className="list-disc list-inside text-gray-700 mb-4 ml-4">
+              <ul class="list-disc list-inside text-gray-700 mb-4 ml-4">
                 <li>
-                  <span className="font-semibold">Voiced:</span> Your vocal cords vibrate when you make the sound (e.g., put your hand on your throat when you say it, you'll feel a vibration).
+                  <span class="font-semibold">Voiced:</span> Your vocal cords vibrate when you make the sound (e.g., put your hand on your throat when you say it, you'll feel a vibration).
                 </li>
                 <li>
-                  <span className="font-semibold">Unvoiced:</span> Your vocal cords do not vibrate; it's just air passing through.
+                  <span class="font-semibold">Unvoiced:</span> Your vocal cords do not vibrate; it's just air passing through.
                 </li>
               </ul>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                <div className="bg-white p-4 rounded-md border border-gray-200 shadow-sm">
-                  <h4 className="font-semibold text-lg text-gray-800 mb-2">Voiced 'TH' Words:</h4>
-                  <ul className="list-disc list-inside text-gray-700 ml-4">
-                    {voicedThWords.map((word, index) => (
-                      <li key={index}>{word}</li>
-                    ))}
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div class="bg-white p-4 rounded-md border border-gray-200 shadow-sm">
+                  <h4 class="font-semibold text-lg text-gray-800 mb-2">Voiced 'TH' Words:</h4>
+                  <ul class="list-disc list-inside text-gray-700 ml-4">
+                    <li>this</li>
+                    <li>that</li>
+                    <li>these</li>
+                    <li>those</li>
+                    <li>they</li>
                   </ul>
                 </div>
-                <div className="bg-white p-4 rounded-md border border-gray-200 shadow-sm">
-                  <h4 className="font-semibold text-lg text-gray-800 mb-2">Unvoiced 'TH' Words:</h4>
-                  <ul className="list-disc list-inside text-gray-700 ml-4">
-                    {unvoicedThWords.map((word, index) => (
-                      <li key={index}>{word}</li>
-                    ))}
+                <div class="bg-white p-4 rounded-md border border-gray-200 shadow-sm">
+                  <h4 class="font-semibold text-lg text-gray-800 mb-2">Unvoiced 'TH' Words:</h4>
+                  <ul class="list-disc list-inside text-gray-700 ml-4">
+                    <li>think</li>
+                    <li>thank</li>
+                    <li>through</li>
+                    <li>thing</li>
+                    <li>three</li>
                   </ul>
                 </div>
               </div>
-              <p className="text-gray-700 mb-2">
-                We also looked at the <span className="font-semibold">IPA table (the table of English sounds)</span>. We will practice this more in the future.
+              <p class="text-gray-700 mb-2">
+                We also looked at the <span class="font-semibold">IPA table (the table of English sounds)</span>. We will practice this more in the future.
               </p>
             </div>
           </section>
 
-          {/* Next Steps */}
-          <section className="mb-8">
-            <h2 className="text-3xl font-extrabold text-gray-800 mb-6 flex items-center">
-              <ArrowRightIcon className="text-blue-500 mr-3 w-8 h-8" /> Your Next Steps
+          <!-- Next Steps -->
+          <section class="mb-8">
+            <h2 class="text-3xl font-extrabold text-gray-800 mb-6 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right text-blue-500 mr-3 w-8 h-8">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg> Your Next Steps
             </h2>
-            <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 shadow-lg space-y-4">
-              <div className="flex items-start">
-                <span className="text-blue-600 text-xl mr-3">🎯</span> {/* Target emoji */}
-                <p className="text-gray-700">
-                  It's clear that the <span className="font-semibold">Present Perfect</span> is an important area for us to focus on. We will dedicate more time to understanding and practicing this grammar point in our next lessons, step-by-step.
+            <div class="bg-blue-50 p-6 rounded-lg border border-blue-200 shadow-lg space-y-4">
+              <div class="flex items-start">
+                <span class="text-blue-600 text-xl mr-3">🎯</span>
+                <p class="text-gray-700">
+                  It's clear that the <span class="font-semibold">Present Perfect</span> is an important area for us to focus on. We will dedicate more time to understanding and practicing this grammar point in our next lessons, step-by-step.
                 </p>
               </div>
-              <div className="flex items-start">
-                <span className="text-blue-600 text-xl mr-3">💬</span> {/* Speech bubble emoji */}
-                <p className="text-gray-700">
-                  We'll also continue to build your <span className="font-semibold">fluency and question-asking skills</span> through lots of speaking practice.
+              <div class="flex items-start">
+                <span class="text-blue-600 text-xl mr-3">💬</span>
+                <p class="text-gray-700">
+                  We'll also continue to build your <span class="font-semibold">fluency and question-asking skills</span> through lots of speaking practice.
                 </p>
               </div>
-              <div className="flex items-start">
-                <span className="text-blue-600 text-xl mr-3">📝</span> {/* Memo emoji */}
-                <p className="text-gray-700 font-semibold mb-2">Homework Tasks:</p>
+              <div class="flex items-start">
+                <span class="text-blue-600 text-xl mr-3">📝</span>
+                <p class="text-gray-700 font-semibold mb-2">Homework Tasks:</p>
               </div>
-              <ul className="list-disc list-inside text-gray-700 ml-8 space-y-2">
+              <ul class="list-disc list-inside text-gray-700 ml-8 space-y-2">
                 <li>Play "2 Truths and a Lie" game with your girlfriend.</li>
                 <li>Ask your girlfriend after work: "How's your day been?" and ask follow-up questions.</li>
                 <li>Ask Akin "What've you been up to this week?" the next time you see him.</li>
@@ -410,21 +481,19 @@ const App = () => {
             </div>
           </section>
 
-          {/* Closing Encouragement */}
-          <section className="text-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6 rounded-lg shadow-lg">
-            <h2 className="text-2xl sm:text-3xl font-extrabold mb-3">You did a great job today, Kubilay!</h2>
-            <p className="text-blue-100 text-lg mb-4">
+          <!-- Closing Encouragement -->
+          <section class="text-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl sm:text-3xl font-extrabold mb-3">You did a great job today, Kubilay!</h2>
+            <p class="text-blue-100 text-lg mb-4">
               Learning a new language is a journey, and every lesson helps. Don't worry, we will work on these areas together.
             </p>
-            <p className="text-blue-100 text-xl font-semibold">
+            <p class="text-blue-100 text-xl font-semibold">
               See you next week!
             </p>
-            <p className="text-blue-200 text-sm mt-4">Warm regards, <br />Jozef</p>
+            <p class="text-blue-200 text-sm mt-4">Warm regards, <br>Jozef</p>
           </section>
         </main>
       </div>
     </div>
-  );
-};
-
-export default App;
+</body>
+</html>
