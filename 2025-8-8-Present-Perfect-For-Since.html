@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubilay's Lesson Feedback</title>
+    <link rel="icon" type="image/x-icon" href="https://example.com/path/to/your/icon.ico"> <!-- Add this line for the favicon -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8F8F8; color: #333333; }
+        .chart-container { position: relative; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; height: 300px; max-height: 350px; }
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F8F8F8; }
+        ::-webkit-scrollbar-thumb { background: #4A90E2; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6B8E23; }
+        .bg-accent-1 { background-color: #4A90E2; }
+        .text-accent-1 { color: #4A90E2; }
+        .bg-accent-2 { color: #6B8E23; }
+        .text-accent-2 { color: #6B8E23; }
+        .bg-error { background-color: #F8D7DA; }
+        .text-error { color: #D0021B; } /* Direct color for error text */
+        .bg-success { background-color: #D4EDDA; }
+        .text-success { color: #1E8449; } /* Darker green for success text */
+        .border-accent-1 { border-color: #4A90E2; }
+        .text-muted-purple { color: #8A2BE2; }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .image-resource {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Chosen Palette: Professional Harmony (Primary Background: #F8F8F8, Text: #333333, Accent 1: #4A90E2, Accent 2: #6B8E23, Error: #D0021B, Success: #7ED321, Muted Purple: #8A2BE2) -->
+    <!-- Application Structure Plan: The SPA is structured into distinct, scrollable thematic sections: Header, Lesson Snapshot, Language Mastery, Strengths & Growth, Targeted Improvement, and Next Steps. This linear flow allows for easy consumption of information, while internal interactive elements (accordions, tabs) enable deeper exploration on demand. This structure was chosen to provide a clear narrative of the lesson's feedback, prioritizing user understanding and ease of navigation over mirroring the original report's layout. -->
+    <!-- Visualization & Content Choices:
+    - Talk Time Analysis: Goal: Inform. Viz/Presentation: Donut Chart (Chart.js/Canvas) for percentages, large HTML text for raw counts. Interaction: Static. Justification: Donut chart visually represents parts of a whole, easy to digest. Large numbers provide immediate impact.
+    - Language Highlights: Goal: Organize/Inform. Viz/Presentation: HTML text lists within collapsible/accordion sections. Interaction: Click to expand/collapse sections. Justification: Manages content density, allows user-driven exploration of details.
+    - Strengths: Goal: Inform/Highlight. Viz/Presentation: HTML bulleted list with Unicode checkmark. Interaction: None (static). Justification: Simple, clear way to present positive points.
+    - Mistake Analysis: Goal: Correct/Inform. Viz/Presentation: HTML text blocks within tabbed interface. Interaction: Click tabs to view specific error/correction. Justification: Presents corrections clearly one at a time, preventing overwhelm.
+    - Homework/Resources: Goal: Inform/Guide. Viz/Presentation: HTML text blocks, HTML links, HTML lists within collapsible sections for resources. Interaction: Click to expand/collapse resource types. Justification: Clear action items and organized resource lists.
+    CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <header class="bg-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-accent-1">Kubilay's Progress Dashboard ✨</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#snapshot" class="hover:text-accent-2 transition duration-300">Snapshot</a></li>
+                <li><a href="#language" class="hover:text-accent-2 transition duration-300">Language</a></li>
+                <li><a href="#strengths" class="hover:text-accent-2 transition duration-300">Strengths</a></li>
+                <li><a href="#mistakes" class="hover:text-accent-2 transition duration-300">Mistakes</a></li>
+                <li><a href="#nextsteps" class="hover:text-accent-2 transition duration-300">Next Steps</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-8 pt-12">
+        <section id="intro" class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold text-gray-800 mb-4">Your Lesson Feedback: A Journey of Growth! 🚀</h2>
+            <p class="text-lg text-gray-600">Kubilay, this report highlights your amazing progress from our lesson on August 8, 2025, focusing on the <span class="font-bold">Present Perfect with FOR and SINCE</span> and using approximators like <span class="font-bold">'about,' 'almost,'</span> and <span class="font-bold">'over.'</span> Let's explore your fantastic work!</p>
+        </section>
+
+        <section id="snapshot" class="mb-12 bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Lesson Snapshot: How We Talked! 🗣️</h2>
+            <p class="text-gray-700 mb-8 text-center">This section gives you an overview of our conversation today, showing how much you spoke and the main topic we covered.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="flex flex-col items-center">
+                    <div class="chart-container">
+                        <canvas id="talkTimeChart"></canvas>
+                    </div>
+                    <p class="text-gray-600 text-sm mt-4">This chart shows the percentage of time you and your teacher spoke.</p>
+                    <p class="text-gray-600 text-sm mt-1">The more you talk, the better! 🗣️</p>
+                </div>
+                <div class="text-center">
+                    <div class="mb-4">
+                        <p class="text-gray-600 text-lg">Total Lesson Duration:</p>
+                        <p class="text-4xl font-extrabold text-muted-purple">1h 50m</p>
+                        <p class="text-gray-500 text-sm">(and 44 seconds)</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-600 text-lg">Your Talk Time (STT):</p>
+                        <p class="text-5xl font-extrabold text-accent-1">39<span class="text-3xl">%</span></p>
+                        <p class="text-gray-500 text-sm">(~43 minutes)</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-600 text-lg">Words Spoken:</p>
+                        <p class="text-4xl font-extrabold text-accent-2">1,935</p>
+                        <p class="text-gray-500 text-sm">Sentences: 259</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-gray-700 mt-8 text-center">Kubilay, your <span class="font-bold">Student Talk Time (STT) significantly improved</span> in this lesson compared to your lesson two classes ago (which was around 10% STT)! This is fantastic progress and shows you're getting more comfortable speaking. Keep it up!</p>
+
+            <h3 class="text-2xl font-bold text-gray-800 mt-10 mb-4 text-center">What We Talked About: Topic Summary 🎯</h3>
+            <p class="text-gray-700 text-center">Today, you continued your journey with the <span class="font-bold">Present Perfect</span>! You learned how to say <span class="font-bold">"how long"</span> something has been happening using <span class="font-bold">FOR</span> (for a period of time) and <span class="font-bold">SINCE</span> (for a specific starting point). You also learned how to use <span class="font-bold">"about," "almost,"</span> and <span class="font-bold">"over."</span> to talk about approximate times, making your sentences sound even more natural. You did a great job talking about your own life and experiences, and you practiced answering questions in a way that will help you for your GESE exam!</p>
+        </section>
+
+        <section id="language" class="mb-12 bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Language Highlights: Your New Tools! 🛠️</h2>
+            <p class="text-gray-700 mb-8 text-center">Here are some key language points you used and learned today. Click to expand and see examples!</p>
+
+            <div class="space-y-4">
+                <div class="language-accordion-item">
+                    <div class="w-full text-left p-4 bg-accent-1 text-white font-semibold rounded-md">
+                        Present Perfect for Duration
+                    </div>
+                    <div class="language-accordion-content p-4 bg-blue-50 rounded-b-md">
+                        <p class="text-gray-700 mb-2">You successfully used sentences like:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>"I've <span class="font-bold">lived</span> in London <span class="font-bold">for</span> 4 years."</li>
+                            <li>"He's <span class="font-bold">worked</span> at his current job <span class="font-bold">since</span> June."</li>
+                            <li>"We've <span class="font-bold">been</span> together <span class="font-bold">since</span> August 2023."</li>
+                            <li>"I've <span class="font-bold">been</span> able to drive a car <span class="font-bold">since</span> 2005."</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="language-accordion-item">
+                    <div class="w-full text-left p-4 bg-accent-1 text-white font-semibold rounded-md">
+                        Approximators
+                    </div>
+                    <div class="language-accordion-content p-4 bg-blue-50 rounded-b-md">
+                        <p class="text-gray-700 mb-2">You learned and practiced how to use:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li><span class="font-bold">"about"</span> (for a general time): "I've lived in London for <span class="font-bold">about</span> 5 years."</li>
+                            <li><span class="font-bold">"almost"</span> (nearly that time): "She's been cooking for <span class="font-bold">almost</span> an hour."</li>
+                            <li><span class="font-bold">"over"</span> (more than that time): "We've been together for <span class="font-bold">over</span> a year."</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="language-accordion-item">
+                    <div class="w-full text-left p-4 bg-accent-1 text-white font-semibold rounded-md">
+                        Conversational Fillers/Expressions
+                    </div>
+                    <div class="language-accordion-content p-4 bg-blue-50 rounded-b-md">
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>"Hmm, let me think..." (A great strategy for the GESE exam!)</li>
+                            <li>"Prep" (short for "preparation").</li>
+                            <li>"Short fuse" (an expression meaning someone gets angry easily and quickly).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="language-accordion-item">
+                    <div class="w-full text-left p-4 bg-accent-1 text-white font-semibold rounded-md">
+                        New Vocabulary
+                    </div>
+                    <div class="language-accordion-content p-4 bg-blue-50 rounded-b-md">
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li><span class="font-bold">Portmanteau:</span> A word blending the sounds and meanings of two other words (e.g., "brunch" from "breakfast" and "lunch").</li>
+                            <li><span class="font-bold">Hangry:</span> Feeling irritable or angry because you are hungry.</li>
+                            <li><span class="font-bold">Brunch:</span> A meal eaten in the late morning, combining breakfast and lunch.</li>
+                            <li><span class="font-bold">Melted:</span> Changed from a solid to a liquid by heat.</li>
+                            <li><span class="font-bold">Tinfoil:</span> A very thin sheet of aluminum, used for wrapping food.</li>
+                            <li><span class="font-bold">Dishwasher:</span> A machine for washing dishes automatically.</li>
+                            <li><span class="font-bold">Disposable plates:</span> Plates designed to be thrown away after one use.</li>
+                            <li><span class="font-bold">Decade:</span> A period of ten years.</li>
+                            <li><span class="font-bold">Century:</span> A period of one hundred years.</li>
+                            <li><span class="font-bold">Millennium:</span> A period of one thousand years.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="strengths" class="mb-12 bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Your Strengths: What You Did Great! ⭐</h2>
+            <p class="text-gray-700 mb-8 text-center">Kubilay, you showed significant strengths in this lesson, and you should be very proud of your progress!</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li><span class="font-bold">Improved Confidence & Engagement:</span> You were much more willing to speak freely and engage in personal conversation, even when you struggled to find the right words. This is a huge step forward from your previous lesson, and it's fantastic to see you feeling more comfortable.</li>
+                <li><span class="font-bold">Good Grasp of "FOR" and "SINCE" Rules:</span> After the explicit teaching, you consistently applied the rules for "for" (duration) and "since" (start point) correctly in the controlled practice exercises (e.g., "She has worked here for 5 months," "They've been married since 2018"). You also correctly used "since last week" and "for 10 minutes."</li>
+                <li><span class="font-bold">Excellent Contraction Practice:</span> You showed strong ability in forming and using contractions (`I've`, `she's`, `they've`), which is vital for natural fluency. You were able to quickly combine "I have" to "I've," "She has" to "She's," etc. This is a noticeable improvement from your lesson two classes ago, where contractions were a specific focus.</li>
+                <li><span class="font-bold">Positive Attitude Towards Correction:</span> You were very receptive to feedback and rephrasing, showing a strong desire to improve. You actively tried to correct your own sentences when guided, like when you corrected "I've able" to "I've been able."</li>
+            </ul>
+        </section>
+
+        <section id="mistakes" class="mb-12 bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Mistake Analysis: Learning & Growing 🌱</h2>
+            <p class="text-700 mb-8 text-center">Here are some common errors observed in this lesson. Remember, mistakes are a natural part of learning!</p>
+
+            <div class="mistake-tabs-content">
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Pronunciation Errors</h3>
+                <div class="mb-4 p-3 bg-blue-50 rounded-md">
+                    <p class="text-gray-800 font-semibold">What was said: "Since the 10<span style="color: #D0021B;">th</span> of February" (The unvoiced /θ/ "th" sound was difficult).</p>
+                    <p class="text-gray-800 font-semibold">Correction: "Since the 10<span class="font-bold" style="color: #1E8449;">th</span> of February" (Focus on the unvoiced /θ/ sound at the end of "10th").</p>
+                </div>
+                <div class="mb-4 p-3 bg-blue-50 rounded-md">
+                    <p class="text-gray-800 font-semibold">What was said: "About a year and a <span style="color: #D0021B;">half</span>" (Pronunciation of "half" was unclear at times).</p>
+                    <p class="text-gray-800 font-semibold">Correction: "About a year and a <span style="color: #1E8449; font-weight: bold;">half</span>" (Focus on the clear /f/ sound at the end of "half").</p>
+                </div>
+                <p class="text-gray-600 text-sm mt-4"><strong>Teacher's Note:</strong> Continue practicing the `th` sounds and the clear pronunciation of final consonants like `/f/`.</p>
+
+                <h3 class="text-xl font-bold text-gray-800 mt-6 mb-3">Present Perfect Errors</h3>
+                <div class="mb-4 p-3 bg-blue-50 rounded-md">
+                    <p class="text-gray-800 font-semibold">What was said: "He's been living in Turkey <span style="color: #D0021B;">since</span> 10 years."</p>
+                    <p class="text-gray-800 font-semibold">Correction: “He’s been living in Turkey <span style="color: #1E8449; font-weight: bold;">for</span> 10 years.” (You self-corrected by saying “for” instead of “since” which was excellent!)</p>
+                </div>
+                <div class="mb-4 p-3 bg-blue-50 rounded-md">
+                    <p class="text-gray-800 font-semibold">What was said: "I’ve used this phone since my last phone <span style="color: #D0021B;">broken</span>."</p>
+                    <p class="text-gray-800 font-semibold">Correction: "I've used this phone since my last phone <span style="color: #1E8449; font-weight: bold;">broke</span>."</p>
+                </div>
+                <p class="text-gray-600 text-sm mt-4"><strong>Teacher's Note:</strong> The main error here was using "I use" instead of "I've used" initially. You correctly self-corrected to "I've used" later. Good job!</p>
+
+                <h3 class="text-xl font-bold text-gray-800 mt-6 mb-3">Preposition Errors</h3>
+                <div class="mb-4 p-3 bg-blue-50 rounded-md">
+                    <p class="text-gray-800 font-semibold">What was said: "I've worked <span style="color: #D0251B;">in</span> here for about 4 years."</p>
+                    <p class="text-gray-800 font-semibold">Correction: "I've worked <span style="color: #1E8449; font-weight: bold;">here</span> for about 4 years."</p>
+                </div>
+                <div class="mb-4 p-3 bg-blue-50 rounded-md">
+                    <p class="text-gray-800 font-semibold">What was said: "I've worked <span style="color: #D0251B;">in</span> this company since about summer of 2021."</p>
+                    <p class="text-gray-800 font-semibold">Correction: "I've worked <span style="color: #1E8449; font-weight: bold;">at</span> this company since about summer of 2021."</p>
+                </div>
+                <p class="text-gray-600 text-sm mt-4"><strong>Teacher's Note:</strong> Continue to review prepositions of place/location.</p>
+            </div>
+        </section>
+
+        <section id="nextsteps" class="mb-12 bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Your Next Steps: Keep Growing! 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center">Here's what you can do to continue your amazing progress before our next lesson:</p>
+
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Homework Task 📝</h3>
+            <div class="bg-blue-50 p-4 rounded-md mb-6">
+                <p class="text-gray-700 mb-2">Kubilay, your homework is to <span class="font-bold">practice the target language from today's lesson</span> and prepare for our next class:</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li><span class="font-bold">Review:</span> Go over your notes and the slides from today's lesson, especially the rules for <span class="font-bold">FOR</span> and <span class="font-bold">SINCE</span> and the approximators <span class="font-bold">"about," "almost,"</span> and <span class="font-bold">"over."</span></li>
+                    <li><span class="font-bold">Practice:</span> Try to make 2-3 sentences about your own life using <span class="font-bold">FOR</span> and <span class="font-bold">SINCE</span> with these approximators. For example: "I've been working at my job for <span class="font-bold">almost</span> four years."</li>
+                    <li><span class="font-bold">Pronunciation:</span> Practice the <span class="font-bold">`th` sounds</span> (voiced and unvoiced) and listen for word stress in new vocabulary.</li>
+                    <li><span class="font-bold">Flipped Classroom:</span> Prepare for our next lesson, which will focus on the <span class="font-bold">Present Perfect Continuous</span> tense. Your teacher will send you some materials (like a video or reading) to help you understand this grammar before class.</li>
+                </ul>
+            </div>
+
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Additional Resources for Practice 📚</h3>
+            <p class="text-gray-700 mb-4">Here are some extra resources to help you continue your learning and address specific areas.</p>
+
+            <div class="space-y-4">
+                <div class="resource-item p-4 bg-blue-50 rounded-md">
+                    <p class="font-semibold text-gray-800 mb-2">Video Explainer: How to Remember FOR and SINCE</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/tNgOWWpUokc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md">
+                    <p class="font-semibold text-gray-800 mb-2">Pronunciation Practice: Voiceless 'th' sound</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/iG9M0wpXfJY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md">
+                    <p class="font-semibold text-gray-800 mb-2">Pronunciation Practice: Voiced 'th' sound</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/JTZgEWNQIIo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md">
+                    <p class="font-semibold text-gray-800 mb-2">GESE Practice Example (Audio/Visual)</p>
+                    <img src="https://imgur.com/TQ8mdtg" alt="GESE Example" class="image-resource">
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md">
+                    <p class="font-semibold text-gray-800 mb-2">Reading: Short Article on "Life Hacks for Daily Productivity"</p>
+                    <p class="text-gray-700 mb-2">Here's a short article about simple "life hacks" that can help you improve your daily productivity. As you read, notice how the <span class="font-bold">Present Perfect</span> is <span class="font-bold">used</span> to talk about recent experiences and things people <span class="font-bold">have tried</span>.</p>
+                    <p class="text-gray-700 text-sm">
+                        <span class="font-bold">The 5-Minute Rule for Tackling Tasks</span><br>
+                        <span class="font-bold">Have you ever felt</span> overwhelmed by a big task? Many people <span class="font-bold">have</span>. One popular "life hack" is the "5-minute rule." This means if a task takes less than 5 minutes to do, you should do it immediately. <span class="font-bold">I've personally found</span> this incredibly helpful <span class="font-bold">for</span> small chores like washing a few dishes or sending a quick email. It's amazing how much <span class="font-bold">you've accomplished</span> by the end of the day <span class="font-bold">just</span> by applying this rule. <span class="font-bold">I've recently tried</span> this <span class="font-bold">for</span> my daily exercise routine, and it <span class="font-bold">has really improved</span> my consistency. <span class="font-bold">I've been</span> using this rule <span class="font-bold">for almost</span> three months <span class="font-bold">now</span>, and <span class="font-bold">I've already seen</span> a big difference. <span class="font-bold">I haven't missed</span> a workout <span class="font-bold">yet</span>!
+                        <br><br>
+                        <span class="font-bold">The Power of a "Done List"</span><br>
+                        Most people <span class="font-bold">have</span> a "to-do list," but <span class="font-bold">have you ever made</span> a "done list"? This is where you write down everything <span class="font-bold">you've already completed</span> in a day. It's a great way to see your progress and feel motivated. <span class="font-bold">I've used</span> this method <span class="font-bold">for</span> my work projects <span class="font-bold">for over</span> a year <span class="font-bold">since</span> I started my new role, and it's <span class="font-bold">always given</span> me a boost of confidence. <span class="font-bold">I've found</span> it particularly useful when <span class="font-bold">I've felt</span> like <span class="font-bold">I haven't achieved</span> much. It helps me avoid the "same old, same old" feeling of just having a long list of things to do.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Talk Time Chart
+        const ctx = document.getElementById('talkTimeChart').getContext('2d');
+        const talkTimeChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Your Talk Time', 'Teacher Talk Time'],
+                datasets: [{
+                    data: [37, 63],
+                    backgroundColor: ['#4A90E2', '#A9A9A9'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#333333',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // No clickable sections, so no accordion or tab JS needed.
+    </script>
+</body>
+</html>
