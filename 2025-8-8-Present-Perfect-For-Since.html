@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kubilay's Lesson Feedback</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/TQ8mdtg.png"> <!-- Favicon link updated -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #F8F8F8; color: #333333; }
+        body { font-family: 'Inter', sans-serif; background-color: #E6E6FA; color: #333333; } /* Calming lavender background */
         .chart-container { position: relative; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; height: 300px; max-height: 350px; }
         @media (min-width: 768px) { .chart-container { height: 350px; } }
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #F8F8F8; }
+        ::-webkit-scrollbar-track { background: #E6E6FA; } /* Scrollbar track matches new background */
         ::-webkit-scrollbar-thumb { background: #4A90E2; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #FFD700; } /* Vibrant gold hover */
-        .bg-accent-1 { background-color: #4A90E2; } /* Vibrant Blue */
+        ::-webkit-scrollbar-thumb:hover { background: #FFD700; }
+        .bg-accent-1 { background-color: #4A90E2; }
         .text-accent-1 { color: #4A90E2; }
-        .bg-accent-2 { background-color: #FFD700; } /* Vibrant Gold */
-        .text-accent-2 { color: #FFD700; }
-        .bg-error-light { background-color: #F8D7DA; } /* Light red background for error blocks */
-        .text-error-dark { color: #D0021B; } /* Darker red for error text */
-        .bg-success-light { background-color: #D4EDDA; } /* Light green background for success blocks */
-        .text-success-dark { color: #1E8449; } /* Darker green for success text */
+        .bg-accent-2 { color: #6B8E23; }
+        .text-accent-2 { color: #6B8E23; }
+        .bg-error-light { background-color: #F8D7DA; }
+        .text-error-dark { color: #D0021B; }
+        .bg-success-light { background-color: #D4EDDA; }
+        .text-success-dark { color: #1E8449; }
         .border-accent-1 { border-color: #4A90E2; }
         .text-muted-purple { color: #8A2BE2; }
         .video-container {
@@ -50,14 +51,14 @@
     </style>
 </head>
 <body class="antialiased">
-    <!-- Chosen Palette: Energetic & Playful (Primary Background: #F8F8F8, Text: #333333, Accent 1: #4A90E2 (Vibrant Blue), Accent 2: #FFD700 (Vibrant Gold), Error: #D0021B (Darker Red), Success: #1E8449 (Darker Green), Muted Purple: #8A2BE2) -->
-    <!-- Application Structure Plan: The SPA is structured into distinct, scrollable thematic sections: Header, Lesson Snapshot, Language Highlights, Strengths, Mistake Analysis, and Next Steps. This linear flow provides a clear narrative of the lesson's feedback. Each section is presented as a "card" for visual separation and ease of digestion. This structure was chosen to provide a clear, digestible feedback report, prioritizing user understanding and ease of navigation on both desktop and mobile. -->
+    <!-- Chosen Palette: Professional Harmony (Primary Background: #E6E6FA (Calming Lavender), Text: #333333, Accent 1: #4A90E2 (Vibrant Blue), Accent 2: #6B8E23 (Vibrant Green), Error: #D0021B (Darker Red), Success: #1E8449 (Darker Green), Muted Purple: #8A2BE2) -->
+    <!-- Application Structure Plan: The SPA is structured into distinct, scrollable thematic sections: Header, Lesson Snapshot, Language Mastery, Strengths & Growth, Targeted Improvement, and Next Steps. This linear flow allows for easy consumption of information, while internal interactive elements (accordions, tabs) enable deeper exploration on demand. This structure was chosen to provide a clear narrative of the lesson's feedback, prioritizing user understanding and ease of navigation on both desktop and mobile. -->
     <!-- Visualization & Content Choices:
     - Talk Time Analysis: Goal: Inform. Viz/Presentation: Donut Chart (Chart.js/Canvas) for percentages, large HTML text for raw counts. Interaction: Static. Justification: Donut chart visually represents parts of a whole, easy to digest. Large numbers provide immediate impact.
     - Language Highlights: Goal: Organize/Inform. Viz/Presentation: HTML bulleted lists within distinct, colored blocks. Interaction: Static. Justification: Breaks down content, uses color for visual grouping, easy to scan.
-    - Strengths: Goal: Inform/Highlight. Viz/Presentation: HTML bulleted list with Unicode star. Interaction: Static. Justification: Simple, clear way to present positive points, uses an emoji for visual appeal.
-    - Mistake Analysis: Goal: Correct/Inform. Viz/Presentation: HTML text blocks within distinct, colored blocks for errors and corrections. Interaction: Static. Justification: Presents corrections clearly with high contrast, preventing overwhelm.
-    - Homework/Resources: Goal: Inform/Guide. Viz/Presentation: HTML bulleted lists for homework, distinct colored blocks for resources with embedded videos/images. Interaction: Static. Justification: Clear action items and organized resource lists with direct access to content.
+    - Strengths: Goal: Inform/Highlight. Viz/Presentation: HTML bulleted list with Unicode checkmark. Interaction: None (static). Justification: Simple, clear way to present positive points, uses an emoji for visual appeal.
+    - Mistake Analysis: Goal: Correct/Inform. Viz/Presentation: HTML text blocks within tabbed interface. Interaction: Click tabs to view specific error/correction. Justification: Presents corrections clearly one at a time, preventing overwhelm.
+    - Homework/Resources: Goal: Inform/Guide. Viz/Presentation: HTML text blocks, HTML links, HTML lists within collapsible sections for resources. Interaction: Click to expand/collapse resource types. Justification: Clear action items and organized resource lists.
     CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 
     <header class="bg-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
@@ -73,7 +74,7 @@
         </nav>
     </header>
 
-    <main class="container mx-auto p-4 sm:p-8 md:p-12 max-w-4xl"> <!-- Adjusted max-width and padding for better mobile readability -->
+    <main class="container mx-auto p-4 sm:p-8 md:p-12 max-w-4xl">
         <section id="intro" class="text-center mb-10 md:mb-12">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3">Your Lesson Feedback: A Journey of Growth! 🚀</h2>
             <p class="text-base sm:text-lg text-gray-600 leading-relaxed">Kubilay, this report highlights your amazing progress from our lesson on August 8, 2025, focusing on the <span class="font-bold">Present Perfect with FOR and SINCE</span> and using approximators like <span class="font-bold">'about,' 'almost,'</span> and <span class="font-bold">'over.'</span> Let's explore your fantastic work!</p>
@@ -119,8 +120,8 @@
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Language Highlights: Your New Tools! 🛠️</h2>
             <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some key language points you used and learned today. Read through these examples!</p>
 
-            <div class="space-y-6"> <!-- Increased space between highlight blocks -->
-                <div class="p-4 bg-blue-50 rounded-md border border-blue-200"> <!-- Added border for definition -->
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
                     <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Present Perfect for Duration</h3>
                     <p class="text-gray-700 mb-2 text-sm sm:text-base">You successfully used sentences like:</p>
                     <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
@@ -183,15 +184,15 @@
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Mistake Analysis: Learning & Growing 🌱</h2>
             <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some common errors observed in this lesson. Remember, mistakes are a natural part of learning!</p>
 
-            <div class="space-y-6"> <!-- Increased space between error categories -->
+            <div class="space-y-6">
                 <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3">Pronunciation Errors</h3>
                     <div class="mb-4">
-                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "Since the 10<span class="text-error-dark">th</span> of February" (The unvoiced /θ/ "th" sound was difficult).</p>
-                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: "Since the 10<span class="font-bold text-success-dark">th</span> of February" (Focus on the unvoiced /θ/ sound at the end of "10th").</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "Since the 10<span style="color: #D0021B;">th</span> of February" (The unvoiced /θ/ "th" sound was difficult).</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: "Since the 10<span class="font-bold" style="color: #1E8449;">th</span> of February" (Focus on the unvoiced /θ/ sound at the end of "10th").</p>
                     </div>
                     <div class="mb-4">
-                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "About a year and a <span class="text-error-dark">half</span>" (Pronunciation of "half" was unclear at times).</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "About a year and a <span style="color: #D0021B;">half</span>" (Pronunciation of "half" was unclear at times).</p>
                         <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: "About a year and a <span class="font-bold" style="color: #1E8449;">half</span>" (Focus on the clear /f/ sound at the end of "half").</p>
                     </div>
                     <p class="text-gray-600 text-sm mt-4"><strong>Teacher's Note:</strong> Continue practicing the `th` sounds and the clear pronunciation of final consonants like `/f/`.</p>
