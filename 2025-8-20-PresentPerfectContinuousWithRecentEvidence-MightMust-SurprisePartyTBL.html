@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubilay's Lesson Feedback</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/TQ8mdtg.png"> <!-- Favicon link updated -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #E6E6FA; color: #333333; } /* Calming lavender background */
+        .chart-container { position: relative; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; height: 300px; max-height: 350px; }
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #E6E6FA; } /* Scrollbar track matches new background */
+        ::-webkit-scrollbar-thumb { background: #4A90E2; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FFD700; }
+        .bg-accent-1 { background-color: #4A90E2; }
+        .text-accent-1 { color: #4A90E2; }
+        .bg-accent-2 { color: #6B8E23; }
+        .text-accent-2 { color: #6B8E23; }
+        .bg-error-light { background-color: #F8D7DA; }
+        .text-error-dark { color: #D0021B; }
+        .bg-success-light { background-color: #D4EDDA; }
+        .text-success-dark { color: #1E8449; }
+        .border-accent-1 { border-color: #4A90E2; }
+        .text-muted-purple { color: #8A2BE2; }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .image-resource {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-accent-1">Kubilay's Progress Dashboard ✨</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#snapshot" class="hover:text-accent-2 transition duration-300">Overview</a></li>
+                <li><a href="#language" class="hover:text-accent-2 transition duration-300">Language</a></li>
+                <li><a href="#strengths" class="hover:text-accent-2 transition duration-300">Strengths</a></li>
+                <li><a href="#noted-success" class="hover:text-accent-2 transition duration-300">Success</a></li>
+                <li><a href="#mistakes" class="hover:text-accent-2 transition duration-300">Mistakes</a></li>
+                <li><a href="#grammar-review" class="hover:text-accent-2 transition duration-300">Grammar Review</a></li>
+                <li><a href="#nextsteps" class="hover:text-accent-2 transition duration-300">Next Steps</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-8 md:p-12 max-w-4xl">
+        <section id="intro" class="text-center mb-10 md:mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3">Your Lesson Feedback: A Journey of Growth! 🚀</h2>
+            <p class="text-base sm:text-lg text-gray-600 leading-relaxed">This report highlights your amazing progress from your last lesson. The core focus was on <strong class='font-bold'>Present Perfect Continuous</strong>, contrasting it with <strong class='font-bold'>Present Perfect Simple</strong>, and integrating approximators like 'about,' 'almost,' and 'over.' Let's explore your fantastic work!</p>
+        </section>
+
+        <section id="snapshot" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Lesson Overview 📊</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">This section gives you an overview of our conversation today, showing the main topic we covered.</p>
+
+            <div class="flex flex-col items-center justify-center"> <!-- Centering content -->
+                <div class="mb-4 text-center">
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle mr-2 text-accent-1"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Total Lesson Duration:
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle ml-2 text-accent-2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </p>
+                    <p class="text-4xl sm:text-5xl font-extrabold text-muted-purple">1h 31m</p>
+                    <p class="text-gray-500 text-sm sm:text-base">(Based on the provided transcript, from your first active participation.)</p>
+                </div>
+            </div>
+            <p class="text-gray-700 mt-8 text-center text-sm sm:text-base leading-relaxed">Kubilay, you are getting more confident speaking in classes, and you were developing some longer sentences than before. This is excellent for your GESE exam! Keep it up!</p>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mt-10 mb-4 text-center">What We Talked About: Topic Summary 🎯</h3>
+            <p class="text-gray-700 text-center text-sm sm:text-base leading-relaxed">Today, our lesson primarily focused on the <strong class='font-bold'>Present Perfect Continuous (PPC)</strong>. We discussed how PPC is used for actions that started in the past and are still continuing now, or have just finished and we can see the results. We also covered <strong class='font-bold'>making guesses using 'must' and 'might'</strong>, and practiced using <strong class='font-bold'>approximators</strong> like 'about', 'around', 'almost', and 'over' to describe approximate times and quantities. You did a great job talking about your own experiences and building longer sentences, which is excellent for your GESE exam!</p>
+        </section>
+
+        <section id="language" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Language Highlights: Your New Tools! 🛠️</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some key language points you used and practiced today. Read through these examples!</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Present Perfect Continuous (PPC)</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">You actively practiced and applied PPC in sentences like:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li>"What have you been doing this week?"</li>
+                        <li>"She has been preparing for her meeting."</li>
+                        <li>"She has been watching Aşk-ı Memnu."</li>
+                        <li>"He has been digging."</li>
+                        <li>"He has been planting flowers."</li>
+                        <li>"They have been studying English."</li>
+                        <li>"They've been eating pizza."</li>
+                        <li>"He has been gardening."</li>
+                        <li>"He has been scuba diving."</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Present Perfect Simple (PPS)</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">You also practiced and applied PPS for completed actions or states up to now:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li>"I've woken up a bit late."</li>
+                        <li>"I've been off today."</li>
+                        <li>"I've decided to start English lessons."</li>
+                        <li>"My friends have just bought a new home."</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Approximators</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">You practiced and applied how to use these words to talk about approximate times:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li>"<strong class='font-bold'>Around</strong> 2 AM."</li>
+                        <li>"<strong class='font-bold'>Almost</strong> 11 PM."</li>
+                        <li>"<strong class='font-bold'>About</strong> 11 PM."</li>
+                        <li>"<strong class='font-bold'>Over</strong> 9 hours."</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Conversational Fillers & Expressions</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li>"<strong class='font-bold'>Got it.</strong>" (Used to show understanding)</li>
+                        <li>"<strong class='font-bold'>Hmmmm... Let me think...</strong>" (Used to show thinking or contemplation)</li>
+                        <li>"<strong class='font-bold'>I reckon.</strong>" (Used by your teacher, means 'I think' or 'I guess')</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">New Vocabulary</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">Day off:</span> A day when you do not have to work.</li>
+                        <li><span class="font-bold">Trouble sleeping / Difficulty sleeping:</span> To have problems falling asleep or staying asleep.</li>
+                        <li><span class="font-bold">Feedback meeting:</span> A meeting where you discuss performance or give comments and suggestions.</li>
+                        <li><span class="font-bold">A couple of ideas:</span> Two or a few ideas.</li>
+                        <li><span class="font-bold">Must (for guesses):</span> Used when you are almost sure something is true. E.g., "He must have been studying late."</li>
+                        <li><span class="font-bold">Might (for guesses):</span> Used when you think something is possible but are not sure. E.g., "He might have been studying for an exam."</li>
+                        <li><span class="font-bold">Savings:</span> Money that you keep, for example, in a bank, for use in the future.</li>
+                        <li><span class="font-bold">Covered in:</span> To be coated or smeared with something. E.g., "He is covered in chocolate."</li>
+                        <li><span class="font-bold">Mud:</span> Soft, sticky earth.</li>
+                        <li><span class="font-bold">Dirt:</span> Loose earth; soil.</li>
+                        <li><span class="font-bold">Sweat:</span> Moisture exuded through the pores of the skin.</li>
+                        <li><span class="font-bold">Scuba diving:</span> The sport of swimming underwater with special breathing equipment.</li>
+                        <li><span class="font-bold">Seawater:</span> Water in the sea or ocean.</li>
+                        <li><span class="font-bold">Detective:</span> A person, especially a police officer, whose profession is to investigate crimes and find criminals.</li>
+                        <li><span class="font-bold">Digging:</span> Breaking up and moving earth, typically with a tool or hands.</li>
+                        <li><span class="font-bold">Planting:</span> Placing a seed, bulb, or plant in the ground so that it can grow.</li>
+                        <li><span class="font-bold">Farewell party:</span> A party held for someone who is leaving.</li>
+                        <li><span class="font-bold">Anniversary:</span> The date on which an event took place in a previous year.</li>
+                        <li><span class="font-bold">Fireworks night / Guy Fawkes Night:</span> A British celebration on November 5th, with fireworks and bonfires.</li>
+                        <li><span class="font-bold">St. Patrick's Day:</span> An Irish holiday celebrated on March 17th.</li>
+                        <li><span class="font-bold">Surprise party:</span> A party given for someone without their knowledge.</li>
+                        <li><span class="font-bold">Wrapping presents/gifts:</span> Covering gifts in paper or other material.</li>
+                        <li><span class="font-bold">Hangover:</span> A severe headache or other disagreeable physical effects following excessive consumption of alcohol.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="strengths" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Your Strengths: What You Did Great! ⭐</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base leading-relaxed">Kubilay, you showed great promise and improvement in several areas during this lesson. Keep building on these!</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm sm:text-base pl-4">
+                <li><span class="font-bold">Initiating Conversation:</span> You confidently asked your teacher, "What have you been doing this week?" which is a fantastic way to start a conversation and shows great initiative.</li>
+                <li><span class="font-bold">Using Approximators:</span> You effectively used words like 'around,' 'almost,' and 'about' to describe times when you weren't exact, showing good flexibility in your vocabulary.</li>
+                <li><span class="font-bold">Engaging with the Topic:</span> You actively discussed your day off and your sleeping patterns, connecting the grammar to your personal experiences.</li>
+                <li><span class="font-bold">Responding to Corrections:</span> When prompted to use '-ing' forms, you quickly adapted and produced correct sentences like, "We've been talking about..." and "She has been preparing..."</li>
+                <li><span class="font-bold">Understanding Evidence for PPC:</span> You clearly understood how to use evidence to talk about recently finished actions, correctly identifying things like "covered in sweat" or "plate is empty" as clues for what someone has been doing.</li>
+            </ul>
+        </section>
+
+        <section id="noted-success" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Noted Success! ✨✨✨</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base leading-relaxed">A key area of success in this lesson was your ability to construct longer, more complex sentences, especially when using the Present Perfect Continuous and other perfect tenses. This shows great progress for your GESE exam!</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-3 text-sm sm:text-base pl-4">
+                <li><span class="font-bold">Sentence 1:</span> "Yes, Joey! What have… what have you been doing this week?"
+                    <br><span class="text-gray-600 text-xs italic"> (Excellent use of the Present Perfect Continuous to ask about recent ongoing activities, showing your ability to initiate complex questions.)</span></li>
+                <li><span class="font-bold">Sentence 2:</span> "She has been preparing for her meetings."
+                    <br><span class="text-gray-600 text-xs italic"> (A strong example of correctly forming the Present Perfect Continuous to describe an ongoing action.)</span></li>
+                <li><span class="font-bold">Sentence 3:</span> "He has been, scuba diving."
+                    <br><span class="text-gray-600 text-xs italic"> (Good use of PPC to describe a recently finished action with visible evidence.)</span></li>
+                <li><span class="font-bold">Sentence 4:</span> "My friends… … have… just bought… new home."
+                    <br><span class="text-gray-600 text-xs italic"> (A great example of using the Present Perfect Simple to describe a recent completed action with a present result.)</span></li>
+            </ul>
+        </section>
+
+        <section id="mistakes" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Mistake Analysis: Learning & Growing 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some common errors observed in this lesson. Remember, mistakes are a natural part of learning and help you improve!</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Grammar & Usage Errors</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "No, I… <span style='color: #D0021B;'>I've been the day off.</span>"</p>
+                        <p class="text-success-dark font-semibold text-sm sm:text-base">Correction: "No, I… <span class='font-bold' style='color: #1E8449;'>I've had the day off.</span>"</p>
+                        <p class="text-gray-600 text-xs italic">(<strong class='font-bold'>Explanation:</strong> Remember to use 'have' with 'had' for the expression 'to have a day off'.)</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "<span style='color: #D0021B;'>having a time.</span>"</p>
+                        <p class="text-success-dark font-semibold text-sm sm:text-base">Correction: "<span class='font-bold' style='color: #1E8449;'>I'm having a good time.</span>"</p>
+                        <p class="text-gray-600 text-xs italic">(<strong class='font-bold'>Explanation:</strong> The common phrase is 'to have a good/bad/great time', not just 'a time'.)</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "<span style='color: #D0021B;'>I got to sleep, … 10 hours?</span>" and "<span style='color: #D0021B;'>I got to sleep at around… to… AM?</span>"</p>
+                        <p class="text-success-dark font-semibold text-sm sm:text-base">Correction: "I <span class='font-bold' style='color: #1E8449;'>slept for</span> 10 hours." / "I <span class='font-bold' style='color: #1E8449;'>fell asleep</span> at around 2 AM."</p>
+                        <p class="text-gray-600 text-xs italic">(<strong class='font-bold'>Explanation:</strong> Use 'slept for' to talk about the duration of sleep. 'Fell asleep' or 'got to sleep' refers to the moment you began sleeping.)</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "She <span style='color: #D0021B;'>come back.</span>"</p>
+                        <p class="text-success-dark font-semibold text-sm sm:text-base">Correction: "She <span class='font-bold' style='color: #1E8449;'>came back.</span>"</p>
+                        <p class="text-gray-600 text-xs italic">(<strong class='font-bold'>Explanation:</strong> For past simple, use the past form of the verb. 'Came' is the past form of 'come'.)</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "He… has, … Feedback meeting. <span style='color: #D0021B;'>Tomorrow.</span>"</p>
+                        <p class="text-success-dark font-semibold text-sm sm:text-base">Correction: "He <span class='font-bold' style='color: #1E8449;'>has a feedback meeting tomorrow.</span>"</p>
+                        <p class="text-gray-600 text-xs italic">(<strong class='font-bold'>Explanation:</strong> 'To have a meeting' is the correct phrase. 'Tomorrow' usually goes at the end of the sentence.)</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "I <span style='color: #D0021B;'>have ran</span>…"</p>
+                        <p class="text-success-dark font-semibold text-sm sm:text-base">Correction: "I <span class='font-bold' style='color: #1E8449;'>have run</span>..."</p>
+                        <p class="text-gray-600 text-xs italic">(<strong class='font-bold'>Explanation:</strong> The past participle of 'run' is 'run', not 'ran'.)</p>
+                    </div>
+                    <p class="text-gray-600 text-sm mt-4"><strong>Teacher's Note:</strong> Keep practicing the correct verb forms, especially the auxiliaries for the Present Perfect tenses, and common collocations!</p>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Pronunciation & Clarity Errors</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Pronunciation Focus: <span style="color: #D0021B;">'-ing' endings</span></p>
+                        <p class="text-success-dark font-semibold text-sm sm:text-base">Correction: Ensure the <span class='font-bold' style='color: #1E8449;'>full '-ing' sound</span> is pronounced clearly (e.g., 'talk<strong class='font-bold' style='color: #1E8449;'>ing</strong>', 'sleep<strong class='font-bold' style='color: #1E8449;'>ing</strong>').</p>
+                        <p class="text-gray-600 text-xs italic">(<strong class='font-bold'>Explanation:</strong> This was a point your teacher highlighted in class. Clear pronunciation of verb endings is crucial for grammar clarity.)</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Pronunciation Focus: <span style="color: #D0021B;'>/th/ sounds (voiced and unvoiced)</span></p>
+                        <p class="text-success-dark font-semibold text-sm sm:text-base">Correction: The English '/th/' sound can be tricky because it's not common in many languages. There are two main types:
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4 mt-2">
+                                <li><span class="font-bold">Unvoiced /θ/:</span> This sound is like the 'th' in 'think' /θɪŋk/ or 'three' /θriː/. You push air through your tongue and teeth without making your vocal cords vibrate.</li>
+                                <li><span class="font-bold">Voiced /ð/:</span> This sound is like the 'th' in 'this' /ðɪs/ or 'mother' /ˈmʌðər/. You make your vocal cords vibrate as you push air through your tongue and teeth.</li>
+                            </ul>
+                            To practice both, place your tongue gently between your front teeth and blow air out for the unvoiced sound, or make a humming sound for the voiced sound. Don't worry if the IPA symbols look new; the important thing is to practice making the sounds!
+                        </p>
+                        <p class="text-gray-600 text-sm mt-4"><strong>Teacher's Note:</strong> Continue practicing the correct pronunciation of new vocabulary and specific sounds like '-ing' and '/th/'. Pay attention to specific vowel sounds and final consonants.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="grammar-review" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Grammar Review: Present Perfect Continuous for Recent Results 📝</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here's a quick review of how to use the Present Perfect Continuous to talk about actions that have recently finished, and there's clear evidence or a result now. This is a very useful way to describe how past actions affect the present!</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Present Perfect Continuous for Recent Results</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">We use the Present Perfect Continuous (have/has been + Verb-ing) to explain the *cause* of a present situation. The action has just stopped, but its effects are visible now.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">Example:</span> "You look tired. Have you been sleeping well?" (The tiredness is the evidence of not sleeping well.)</li>
+                        <li><span class="font-bold">Example:</span> "The ground is wet. It has been raining." (The wet ground is the evidence of recent rain.)</li>
+                        <li><span class="font-bold">Example:</span> "My eyes are red because I've been watching too much TV." (Red eyes are the evidence of watching too much TV.)</li>
+                    </ul>
+                </div>
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Positive Form (+)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-md overflow-hidden">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6 text-left">Subject</th>
+                                    <th class="py-3 px-6 text-left">Present Perfect Simple</th>
+                                    <th class="py-3 px-6 text-left">Present Perfect Continuous</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 text-sm">
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">I / You / We / They</td>
+                                    <td class="py-3 px-6 text-left">have + Past Participle (V3) <br> <span class="font-bold">Example:</span> I have finished.</td>
+                                    <td class="py-3 px-6 text-left">have been + Verb-ing <br> <span class="font-bold">Example:</span> I have been studying.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">He / She / It</td>
+                                    <td class="py-3 px-6 text-left">has + Past Participle (V3) <br> <span class="font-bold">Example:</span> He has worked.</td>
+                                    <td class="py-3 px-6 text-left">has been + Verb-ing <br> <span class="font-bold">Example:</span> He has been living.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Negative Form (-)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-md overflow-hidden">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6 text-left">Subject</th>
+                                    <th class="py-3 px-6 text-left">Present Perfect Simple</th>
+                                    <th class="py-3 px-6 text-left">Present Perfect Continuous</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 text-sm">
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">I / You / We / They</td>
+                                    <td class="py-3 px-6 text-left">have not (haven't) + Past Participle (V3) <br> <span class="font-bold">Example:</span> I haven't seen.</td>
+                                    <td class="py-3 px-6 text-left">have not (haven't) been + Verb-ing <br> <span class="font-bold">Example:</span> I haven't been waiting.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">He / She / It</td>
+                                    <td class="py-3 px-6 text-left">has not (hasn't) + Past Participle (V3) <br> <span class="font-bold">Example:</span> He hasn't eaten.</td>
+                                    <td class="py-3 px-6 text-left">has not (hasn't) been + Verb-ing <br> <span class="font-bold">Example:</span> He hasn't been sleeping.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Question Form (?)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-md overflow-hidden">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6 text-left">Auxiliary</th>
+                                    <th class="py-3 px-6 text-left">Subject</th>
+                                    <th class="py-3 px-6 text-left">Present Perfect Simple</th>
+                                    <th class="py-3 px-6 text-left">Present Perfect Continuous</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 text-sm">
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">Have</td>
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">I / You / We / They</td>
+                                    <td class="py-3 px-6 text-left">+ Past Participle (V3) <br> <span class="font-bold">Example:</span> Have you finished?</td>
+                                    <td class="py-3 px-6 text-left">been + Verb-ing <br> <span class="font-bold">Example:</span> Have you been waiting?</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">Has</td>
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">He / She / It</td>
+                                    <td class="py-3 px-6 text-left">+ Past Participle (V3) <br> <span class="font-bold">Example:</span> Has he worked?</td>
+                                    <td class="py-3 px-6 text-left">been + Verb-ing <br> <span class="font-bold">Example:</span> Has he been sleeping?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Verb Agreements (Auxiliary Verb)</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">Remember to use the correct auxiliary verb ('have' or 'has') with each subject:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">I have</span> (I've)</li>
+                        <li><span class="font-bold">You have</span> (You've)</li>
+                        <li><span class="font-bold">We have</span> (We've)</li>
+                        <li><span class="font-bold">They have</span> (They've)</li>
+                        <li><span class="font-bold">He has</span> (He's)</li>
+                        <li><span class="font-bold">She has</span> (She's)</li>
+                        <li><span class="font-bold">It has</span> (It's)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="nextsteps" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Your Next Steps: Keep Growing! 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here's what you can do to continue your amazing progress before our next lesson:</p>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Homework Task 📝</h3>
+            <div class="bg-blue-50 p-4 rounded-md border border-blue-200 mb-6">
+                <p class="text-gray-700 mb-2 text-sm sm:text-base">This week, your homework is to plan a surprise party for Semin! To do this, you'll need to ask her about her recent activities, hobbies, and interests. This will give you lots of practice with the Present Perfect Continuous.</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                    <li><span class="font-bold">Conversation Practice:</span> Ask Semin questions like:
+                        <ul>
+                            <li>"What have you been doing recently that you've really been enjoying?"</li>
+                            <li>"Do you have any new hobbies that you've been doing?"</li>
+                            <li>"Have you been watching any new TV shows?"</li>
+                            <li>"What kind of music have you been listening to lately?"</li>
+                            <li>"Have you been planning any trips or special events?"</li>
+                        </ul>
+                    </li>
+                    <li><span class="font-bold">Note-Taking:</span> Use this Google Doc to make notes about Semin's answers, which you can tell your teacher about next class: <a href="https://docs.google.com/document/d/1zYk96DqPi3A_7CBGGz-D1uoVjWbkdIMqLvbCpageXOA/edit?tab=t.0" target="_blank" class="text-accent-1 hover:text-accent-2 transition duration-300">Semin's Surprise Party Notes</a></li>
+                    <li><span class="font-bold">Pronunciation:</span> Practice the /th/ voiced and unvoiced sounds. Focus on putting your tongue between your teeth for these sounds.</li>
+                    <li><span class="font-bold">Review:</span> Review the grammar tables for Present Perfect Simple and Continuous, paying extra attention to the use of PPC for recent results.</li>
+                </ul>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Additional Resources for Practice 📚</h3>
+            <p class="text-gray-700 mb-4 text-sm sm:text-base">Here are some extra resources to help you continue your learning and address specific areas.</p>
+
+            <div class="space-y-4">
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Story: Kubilay and the Italian Barber</p>
+                    <a href="https://g.co/gemini/share/4dcdb902da21" target="_blank" class="flex items-center justify-center text-accent-1 hover:text-accent-2 transition duration-300 mt-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                        <span class="ml-2 text-lg font-bold">Click to Read!</span>
+                    </a>
+                    <p class="text-gray-600 text-xs text-center mt-1"> (Opens in a new tab)</p>
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Pronunciation Practice: The '/th/' Sound (Voiced and Unvoiced)</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/b4Aj3k65HSo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">More Pronunciation Practice: Voiced and Unvoiced TH</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/fRW3k0QHSYM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Reading: Maya's Busy Morning</p>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">Read this fun story about Maya's morning, which is full of examples of the Present Perfect Continuous!</p>
+                    <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                        Maya’s apartment was a mess. She looked around with a sigh. “Oh, dear,” she thought, “I’ve <strong class='font-bold'>been baking</strong> all morning, and now flour is everywhere!” Her hands were still a little dusty, evidence of her recent activity. She had been trying a new recipe for blueberry muffins. The delicious smell of warm pastries was still <strong class='font-bold'>wafting</strong> through the air, a clear sign of what she’d <strong class='font-bold'>been doing</strong>. Her cat, Whiskers, was also looking suspiciously flour-dusted; he’d probably <strong class='font-bold'>been watching</strong> her from the countertop. Maya also noticed the living room window was open. “Oops, I’ve <strong class='font-bold'>been letting</strong> in the cool air,” she mumbled. Outside, the birds were <strong class='font-bold'>singing</strong> loudly – they’d <strong class='font-bold'>been enjoying</strong> the morning sunshine, unlike Maya who’d <strong class='font-bold'>been working</strong> hard in the kitchen. She still had to clean up, but at least she had a fresh batch of muffins!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="next-class-info" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Next Class Information 📅</h2>
+            <p class="text-gray-700 text-center text-sm sm:text-base leading-relaxed">Our next class is scheduled for <span class="font-bold">Sunday at 4:00 PM GMT</span>. We'll aim for a slightly shorter lesson so you're not too tired before your work. Make sure to review the materials!</p>
+        </section>
+    </main>
+</body>
+</html>
