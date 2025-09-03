@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubilay's Lesson Feedback</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/TQ8mdtg.png"> <!-- Favicon link updated -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #E6E6FA; color: #333333; } /* Calming lavender background */
+        .chart-container { position: relative; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; height: 300px; max-height: 350px; }
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #E6E6FA; } /* Scrollbar track matches new background */
+        ::-webkit-scrollbar-thumb { background: #4A90E2; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FFD700; }
+        .bg-accent-1 { background-color: #4A90E2; }
+        .text-accent-1 { color: #4A90E2; }
+        .bg-accent-2 { color: #6B8E23; }
+        .text-accent-2 { color: #6B8E23; }
+        .bg-error-light { background-color: #F8D7DA; }
+        .text-error-dark { color: #D0021B; }
+        .bg-success-light { background-color: #D4EDDA; }
+        .text-success-dark { color: #1E8449; }
+        .border-accent-1 { border-color: #4A90E2; }
+        .text-muted-purple { color: #8A2BE2; }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .image-resource {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-accent-1">Kubilay's Progress Dashboard ✨</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#snapshot" class="hover:text-accent-2 transition duration-300">Overview</a></li>
+                <li><a href="#language" class="hover:text-accent-2 transition duration-300">Language</a></li>
+                <li><a href="#strengths" class="hover:text-accent-2 transition duration-300">Strengths</a></li>
+                <li><a href="#mistakes" class="hover:text-accent-2 transition duration-300">Mistakes</a></li>
+                <li><a href="#grammar-review" class="hover:text-accent-2 transition duration-300">Grammar Review</a></li>
+                <li><a href="#nextsteps" class="hover:text-accent-2 transition duration-300">Next Steps</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-8 md:p-12 max-w-4xl">
+        <section id="intro" class="text-center mb-10 md:mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3">Your Lesson Feedback: A Journey of Growth! 🚀</h2>
+            <p class="text-base sm:text-lg text-gray-600 leading-relaxed">Kubilay, this report highlights your amazing progress from our lesson on September 2nd, 2025. The core focus was on the <strong>Zero and First Conditional</strong>, with a secondary focus on how to use modals like <strong>will, might, and must</strong>. Let's explore your fantastic work!</p>
+        </section>
+
+        <section id="snapshot" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Lesson Overview 📊</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">This section gives you an overview of our conversation today, showing the main topic we covered.</p>
+
+            <div class="flex flex-col items-center justify-center"> <!-- Centering content -->
+                <div class="mb-4 text-center">
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle mr-2 text-accent-1"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Total Lesson Duration:
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle ml-2 text-accent-2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </p>
+                    <p class="text-4xl sm:text-5xl font-extrabold text-muted-purple">1h 59m</p>
+                    <p class="text-gray-500 text-sm sm:text-base">(and 18 seconds)</p>
+                </div>
+            </div>
+            <p class="text-gray-700 mt-8 text-center text-sm sm:text-base leading-relaxed">Kubilay, your conversational skills were excellent today! You used the language to express your ideas in full sentences, which is fantastic. Keep practicing your pronunciation and don't be afraid to make mistakes—they are part of the learning process! A great example of this was when you were talking about your friends and smoking weed and listening to jazz music all night.</p>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mt-10 mb-4 text-center">What We Talked About: Topic Summary 🎯</h3>
+            <p class="text-gray-700 text-center text-sm sm:text-base leading-relaxed">Today, the lesson focused on the <strong>Zero and First Conditional</strong>. You learned that the zero conditional is used for things that are <strong>always true</strong>, such as scientific facts or rules (e.g., "If you heat ice, it melts"). The first conditional, on the other hand, is used for <strong>possible future situations and their definite outcomes</strong> (e.g., "If it snows, I won't go to work"). You also practiced using modals like <strong>will, might, and must</strong> to express different levels of certainty and obligation. You did a great job understanding the core concepts, especially differentiating between 'if' and 'when'!</p>
+        </section>
+
+        <section id="habits-routines" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Habits & Routines: What's the Difference? 🤔</h2>
+            <p class="text-gray-700 mb-2 text-sm sm:text-base leading-relaxed">In class, we talked a lot about the word "habit." A <strong>habit</strong> is something you do frequently or regularly, almost automatically. Habits can be good (e.g., "I brush my teeth every morning") or bad (e.g., "I bite my nails when I'm nervous").</p>
+            <p class="text-gray-700 mb-2 text-sm sm:text-base leading-relaxed">A <strong>routine</strong> is a series of habits or actions you do in a particular order. For example, "My morning routine is to wake up, drink coffee, and read the news."</p>
+            <p class="text-gray-700 text-sm sm:text-base leading-relaxed">Both habits and routines are often described using the <strong>Zero Conditional</strong> because they are things that are generally or always true for you. For example, "When I come home from work, I take off my clothes" is a routine for you, so we use a zero conditional sentence to describe it.</p>
+        </section>
+
+        <section id="common-uses" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Conditional Sentences: Common Uses 📝</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">This section gives you a quick review of the most common ways we use the zero and first conditional. This will help you remember when to use each one!</p>
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Zero Conditional: General Truths</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">We use the zero conditional to talk about things that are always true. The sentence structure is: <strong>If/When + Present Simple, Present Simple.</strong></p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><strong>Facts:</strong> Scientific facts, universal truths, and things that always happen under certain conditions.
+                            <br><span class="text-gray-600 text-xs italic">Example: "If you heat water to 100°C, it boils."</span></li>
+                        <li><strong>Habits & Routines:</strong> Things that you do regularly or a frequent outcome of an action. Habits can be good, bad, or neutral.
+                            <br><span class="text-gray-600 text-xs italic">Example: "When I get home from work, I take off my shoes."</span></li>
+                        <li><strong>Rules & Instructions:</strong> Rules or instructions that are always followed.
+                            <br><span class="text-gray-600 text-xs italic">Example: "If a customer has a complaint, the manager handles it."</span></li>
+                    </ul>
+                </div>
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">First Conditional: Future Possibilities</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">We use the first conditional to talk about a possible future situation and its probable result. The sentence structure is: <strong>If + Present Simple, will + Verb.</strong></p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><strong>Predictions:</strong> Things you think will happen in the future based on a condition.
+                            <br><span class="text-gray-600 text-xs italic">Example: "If it rains tomorrow, the football game will be canceled."</span></li>
+                        <li><strong>Superstitions:</strong> Beliefs about good or bad luck related to a future event.
+                            <br><span class="text-gray-600 text-xs italic">Example: "If you walk under a ladder, you will have bad luck."</span></li>
+                        <li><strong>Plans & Promises:</strong> Things you plan to do or promise to do if a condition is met.
+                            <br><span class="text-gray-600 text-xs italic">Example: "If I finish my work early, I will go to the gym."</span></li>
+                        <li><strong>Offers & Advice:</strong> Giving someone a suggestion or an offer.
+                            <br><span class="text-gray-600 text-xs italic">Example: "If you want to lose weight, you will need to exercise."</span></li>
+                        <li><strong>Warnings:</strong> A sentence to warn someone about a definite negative future outcome.
+                            <br><span class="text-gray-600 text-xs italic">Example: "If you are late to work tomorrow, the boss will be unhappy."</span></li>
+                        <li><strong>Ability:</strong> To talk about an ability in a conditional situation.
+                            <br><span class="text-gray-600 text-xs italic">Example: "If you have an allergy, you can change the ingredients."</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="language" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Language Highlights: Your New Tools! 🛠️</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some key language points you used and learned today. Read through these examples!</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Zero and First Conditional</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">We used the zero conditional for <strong>general truths</strong> and the first conditional for <strong>possible future events</strong>. You practiced making sentences like these:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li>"When I dance, I'm happy." (Zero conditional - always true for you)</li>
+                        <li>"If I don't work, I don't have money for my living costs." (Zero conditional - a fact)</li>
+                        <li>"If I see my old friends, we <strong>will</strong> listen to jazz music." (First conditional - a plan for the future)</li>
+                        <li>"If you <strong>are</strong> late to work tomorrow, the boss <strong>will be</strong> unhappy." (First conditional - a warning about a future event)</li>
+                        <li>"If you have an allergy, you <strong>can</strong> change the ingredients." (First conditional - expresses ability)</li>
+                    </ul>
+                </div>
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Modals of Certainty and Obligation</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">We also reviewed how to use modal verbs to talk about the certainty of a future outcome or a sense of obligation. You learned these important distinctions:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><strong>will</strong>: (100% certain) "The sun <strong>will</strong> come up tomorrow."</li>
+                        <li><strong>won't</strong>: (0% certain) "It <strong>won't</strong> snow tomorrow."</li>
+                        <li><strong>probably</strong>: (75% certain) "It <strong>probably</strong> won't rain."</li>
+                        <li><strong>might</strong>: (50% certain) "It <strong>might</strong> rain later."</li>
+                        <li><strong>must</strong>: (no choice/obligation) "I <strong>must</strong> approve the ready payments."</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">New Vocabulary and Pronunciation</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><strong>Hardy plants</strong>: plants that are tough and can survive in difficult conditions.</li>
+                        <li><strong>Superstition</strong>: a belief or practice resulting from ignorance of science.</li>
+                        <li><strong>Frustrated</strong>: feeling upset or annoyed as a result of being unable to change or achieve something.</li>
+                        <li><strong>Furious</strong>: extremely angry.</li>
+                        <li><strong>Delegate</strong>: to give a task or responsibility to another person.</li>
+                        <li><strong>Thirsty</strong>: The need for water or liquid to drink.</li>
+                        <li><strong>Recipe</strong>: The steps you follow to make a dish.</li>
+                        <li><strong>Bouquet</strong>: a bunch of flowers arranged in a pleasing way.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="strengths" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Your Strengths: What You Did Great! ⭐</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base leading-relaxed">Kubilay, you showed significant strengths in this lesson. You should be very proud of your progress!</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm sm:text-base pl-4">
+                <li><strong>Clear Understanding of the Core Concepts:</strong> You correctly identified the difference between the zero and first conditional, especially when distinguishing between <strong>facts</strong> (zero conditional) and <strong>possible future events</strong> (first conditional). You were quick to identify the sentences with `will` as first conditional sentences.</li>
+                <li><strong>Improved Pronunciation:</strong> You showed great improvement in a previous lesson's pronunciation error of the 'th' sound, which was a specific focus in your last lesson. Your pronunciation of "throat" was excellent today, and you quickly corrected yourself.</li>
+                <li><strong>Effective Use of Modals:</strong> You correctly placed modals like `must` and `will` in your sentences to reflect certainty and obligation, which added great nuance and accuracy to your examples. You correctly identified that `must` implies "no choice."</li>
+                <li><strong>Sentence Flipping:</strong> You were able to correctly flip conditional sentences, placing the `if` clause at the beginning or in the middle of the sentence without a comma, which is a key skill for writing and speaking.</li>
+            </ul>
+        </section>
+
+        <section id="mistakes" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Mistake Analysis: Learning & Growing 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some common errors observed in this lesson. Remember, mistakes are a natural part of learning!</p>
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Grammar and Tense Errors</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "I haven't been able to focus <span style="color: #D0021B;">from</span> I quit smoking."</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: "I haven't been able to focus <span class="font-bold" style="color: #1E8449;">since</span> I quit smoking."</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "If I finish my work early, I <strong>will</strong> go to <span style="color: #D0021B;">gym</span>."</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: "If I finish my work early, I <strong>will</strong> go to <span class="font-bold" style="color: #1E8449;">the gym</span>."</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "I must handle <span style="color: #D0021B;">my with myself</span>."</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: "I must handle <span class="font-bold" style="color: #1E8449;">it myself</span>."</p>
+                    </div>
+                    <p class="text-gray-600 text-sm mt-4"><strong>Teacher's Note:</strong> Pay attention to the correct prepositions to use after certain verbs or to link sentences together. This is a common area to work on!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="grammar-review" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Grammar Review: Conditional Sentences 📝</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here's a quick review of how to form conditional sentences. This is important for accuracy!</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Zero Conditional</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Used for things that are <strong>always true</strong>, such as facts and habits.</p>
+                    <div class="overflow-x-auto mt-4">
+                        <table class="min-w-full bg-white rounded-md overflow-hidden">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6 text-left">Condition (If/When + Present Simple)</th>
+                                    <th class="py-3 px-6 text-left">Result (Present Simple)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 text-sm">
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">If you heat water to 100 degrees,</td>
+                                    <td class="py-3 px-6 text-left">it boils.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">When the sun goes down,</td>
+                                    <td class="py-3 px-6 text-left">it gets dark.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">First Conditional</h3>
+                    <p class="text-gray-700 text-sm sm:text-base">Used for a <strong>possible future situation</strong> and its <strong>definite result</strong>.</p>
+                    <div class="overflow-x-auto mt-4">
+                        <table class="min-w-full bg-white rounded-md overflow-hidden">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6 text-left">Condition (If + Present Simple)</th>
+                                    <th class="py-3 px-6 text-left">Result (will + Verb)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 text-sm">
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">If it rains tomorrow,</td>
+                                    <td class="py-3 px-6 text-left">the football game will be canceled.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">If she doesn't call me today,</td>
+                                    <td class="py-3 px-6 text-left">I'll be annoyed.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nextsteps" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Your Next Steps: Keep Growing! 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here's what you can do to continue your amazing progress before our next lesson:</p>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Homework Task 📝</h3>
+            <div class="bg-blue-50 p-4 rounded-md border border-blue-200 mb-6">
+                <p class="text-gray-700 mb-2 text-sm sm:text-base">Kubilay, your homework is to practice the Zero and First Conditional using your <strong>English for Everyone</strong> books. These exercises will help you consolidate what we covered in class.</p>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                    <li><strong>Grammar Reference Book</strong>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                            <li>Conditional Sentences - Chapter 78</li>
+                            <li>Pages 80-85</li>
+                        </ul>
+                    </li>
+                    <li><strong>Level 3 Course Book</strong>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                            <li>0th Conditional: Read Unit 48</li>
+                            <li>Pages 162-165</li>
+                            <li>1st Conditional: Read Unit 50</li>
+                            <li>Pages 170-173</li>
+                        </ul>
+                    </li>
+                    <li><strong>Level 3 Practice Book (If you have time)</strong>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                            <li>0th Conditional</li>
+                            <li>Pages 135-137</li>
+                            <li>1st Conditional</li>
+                            <li>Pages 142-149</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Additional Resources for Practice 📚</h3>
+            <p class="text-gray-700 mb-4 text-sm sm:text-base">Here are some extra resources to help you continue your learning and address specific areas.</p>
+
+            <div class="space-y-4">
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Reading: The English and Turkish Superstitions</p>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">Enjoy this fun story that revisits the superstitions we talked about in class! As you read, pay close attention to the Zero and First Conditional sentences.</p>
+                    <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                        In England, if you <strong>walk</strong> under a ladder, you <strong>will have</strong> bad luck. It’s a very old superstition. When people <strong>see</strong> a black cat, they <strong>believe</strong> it is bad luck, but only in some parts of the world. In Turkey, if you <strong>find</strong> a ladybug on your hand, you <strong>will have</strong> good luck!
+                        <br><br>
+                        Weddings are a great example of conditional sentences. If you <strong>catch</strong> the bride’s bouquet at a wedding, you <strong>will be</strong> the next to get married. A different superstition says if you <strong>trip</strong> and a girl <strong>falls on you</strong> in the park, you <strong>will get</strong> married. When a bride <strong>throws</strong> her bouquet, all of the single women <strong>try</strong> to catch it. In Turkey, if the guests <strong>throw</strong> rice at a wedding, it <strong>is</strong> good luck for the newly married couple.
+                        <br><br>
+                        Kubilay's friend Akin <strong>has been</strong> working hard and <strong>has a new belief</strong>. He says, "If I <strong>work</strong> a lot, I <strong>get</strong> a lot of money." This is more like a fact, a zero conditional sentence. The future prediction would be, "If I <strong>study</strong> hard for my exam, I <strong>will get</strong> a good grade!"
+                    </p>
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Video Explainer: All Conditional Sentences</p>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">This video provides a great overview of all the different conditional sentences, including the second and third conditional, and mixed conditionals. It's a fantastic resource for future study!</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/mJS9Dh5hPNg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="next-class-info" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Next Class Information 📅</h2>
+            <p class="text-gray-700 text-center text-sm sm:text-base leading-relaxed">Our next class is scheduled for <span class="font-bold">Thursday at 12 GMT</span>. We'll review the zero and first conditionals and modal verbs (such as <strong>will, might, must, probably, and won't</strong>). I'll also introduce you to the second conditional. See you then!</p>
+        </section>
+    </main>
+</body>
+</html>
