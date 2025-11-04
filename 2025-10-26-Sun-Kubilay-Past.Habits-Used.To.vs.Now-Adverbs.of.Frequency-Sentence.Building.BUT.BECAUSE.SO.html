@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubilay's Lesson Feedback</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/TQ8mdtg.png"> <!-- Favicon link updated -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Chart.js is removed as per request -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #E6E6FA; color: #333333; } /* Calming lavender background */
+        .chart-container { position: relative; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; height: 300px; max-height: 350px; }
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #E6E6FA; } /* Scrollbar track matches new background */
+        ::-webkit-scrollbar-thumb { background: #4A90E2; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FFD700; }
+        .bg-accent-1 { background-color: #4A90E2; }
+        .text-accent-1 { color: #4A90E2; }
+        .bg-accent-2 { color: #6B8E23; }
+        .text-accent-2 { color: #6B8E23; }
+        .bg-error-light { background-color: #F8D7DA; }
+        .text-error-dark { color: #D0021B; }
+        .bg-success-light { background-color: #D4EDDA; }
+        .text-success-dark { color: #1E8449; }
+        .border-accent-1 { border-color: #4A90E2; }
+        .text-muted-purple { color: #8A2BE2; }
+        .video-container {
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f3f4f6; /* Tailwind gray-100 */
+        }
+        .video-container a {
+            display: block;
+            position: relative;
+            cursor: pointer;
+        }
+        .video-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            min-height: 150px; /* Ensure visibility on mobile */
+            object-fit: cover;
+        }
+        /* Custom styles for the YouTube logo placeholder */
+        .youtube-logo-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 200px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #FF0000;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+        .youtube-logo-overlay span {
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-accent-1">Kubilay's Progress Dashboard ✨</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#snapshot" class="hover:text-accent-2 transition duration-300">Overview</a></li>
+                <li><a href="#language" class="hover:text-accent-2 transition duration-300">Language</a></li>
+                <li><a href="#strengths" class="hover:text-accent-2 transition duration-300">Strengths</a></li>
+                <li><a href="#noted-success" class="hover:text-accent-2 transition duration-300">Success</a></li>
+                <li><a href="#mistakes" class="hover:text-accent-2 transition duration-300">Mistakes</a></li>
+                <li><a href="#grammar-review" class="hover:text-accent-2 transition duration-300">Grammar Review</a></li>
+                <li><a href="#nextsteps" class="hover:text-accent-2 transition duration-300">Next Steps</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-8 md:p-12 max-w-4xl">
+        <section id="intro" class="text-center mb-10 md:mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3">Your Lesson Feedback: A Journey of Growth! 🚀</h2>
+            <p class="text-base sm:text-lg text-gray-600 leading-relaxed">Kubilay, this report highlights your fantastic session focused on comparing <strong>Past Habits</strong> versus <strong>Present Habits</strong>. The core goal was mastering the use of <strong>used to</strong> and integrating <strong>Adverbs of Frequency</strong> to add detail to your stories. Let's explore your great work!</p>
+        </section>
+
+        <section id="snapshot" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Lesson Overview 📊</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">This section gives you an overview of our conversation today, showing the main topic we covered.</p>
+
+            <div class="flex flex-col items-center justify-center">
+                <div class="mb-4 text-center">
+                    <p class="text-base sm:text-lg text-gray-800 font-bold mb-2">Lesson Date: October 26, 2025</p>
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle mr-2 text-accent-1"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Total Lesson Duration:
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle ml-2 text-accent-2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </p>
+                    <p class="text-4xl sm:text-5xl font-extrabold text-muted-purple">2h 56m</p>
+                    <p class="text-gray-500 text-sm sm:text-base">(176 minutes of active time)</p>
+                </div>
+            </div>
+            <p class="text-gray-700 mt-8 text-center text-sm sm:text-base leading-relaxed">Kubilay, you excelled in contrasting your old life in Turkey with your new life in London! You built many excellent, long sentences using <strong>used to</strong> and <strong>never used to</strong>. Keep focusing on integrating those essential connectors (<strong>but, because, so</strong>) to make your explanations richer and clearer, especially for comparison tasks in the GESE exam!</p>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mt-10 mb-4 text-center">What We Talked About: Topic Summary 🎯</h3>
+            <p class="text-gray-700 text-center text-sm sm:text-base leading-relaxed">Today, we established the core usage of <strong>used to</strong> (for actions or states that were regular in the past but are completely stopped now) and <strong>never used to</strong> (for actions that didn't happen in the past but happen now). We used <strong>Adverbs of Frequency</strong> (like <strong>often</strong> and <strong>rarely</strong>) to make your present habits clearer. You successfully built compound sentences by linking ideas with <strong>but</strong> (contrast), <strong>because</strong> (reason), and <strong>so</strong> (result). This skill of creating long, multi-clause sentences is crucial for moving beyond the A2 level!</p>
+        </section>
+
+        <section id="language" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Language Highlights: Your New Tools! 🛠️</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some key language points you used and learned today. Read through these examples!</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Past Habits: Used To & Never Used To</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">The value of these structures is creating a clear, simple contrast between your old life and your new life.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li>"I <strong>used to</strong> go to Europe all the time when I lived in Turkey, <strong>but since</strong> I moved to the UK... I <strong>would rather</strong> visit my family."</li>
+                        <li>"He <strong>never used to</strong> like spicy food, <strong>but now</strong> he does."</li>
+                        <li>"My friends <strong>used to often</strong> come to my home every Friday, <strong>but now</strong> I <strong>don't</strong> do anything."</li>
+                        <li>"I <strong>used to</strong> meditate every day 5 years ago, <strong>but now</strong> I <strong>never</strong> meditate."</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Adverbs of Frequency</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">You strengthened your use of adverbs to make your sentences more detailed, especially for present habits.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li>"I <strong>rarely</strong> go for long walks in the winter."</li>
+                        <li>"My boss is <strong>hardly ever</strong> upset with me."</li>
+                        <li>"I go for a walk at the weekend... with myself or <strong>sometimes</strong> with Semin."</li>
+                        <li>"I <strong>often</strong> go for a walk." (Correctly placed before the verb.)</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">New Expressions & Connectors</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">Walk me through:</span> An expression meaning to explain something step-by-step (e.g., "Walk me through your morning routine.").</li>
+                        <li><span class="font-bold">Sleep in:</span> To intentionally sleep later than usual, typically on weekends.</li>
+                        <li><span class="font-bold">I'd rather:</span> A contraction of "I would rather," meaning <strong>I prefer</strong>. (e.g., "I'd rather go home than stay out late.").</li>
+                        <li><span class="font-bold">at all:</span> Used after a negative to add emphasis (e.g., "I don't play basketball <strong>at all</strong>.").</li>
+                        <li><span class="font-bold">But, Because, So:</span> You practiced linking complex ideas using <strong>But</strong> (contrast), <strong>Because</strong> (reason), and <strong>So</strong> (result).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="strengths" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Your Strengths: What You Did Great! ⭐</h2>
+            <p class="text-700 mb-8 text-center text-sm sm:text-base leading-relaxed">Kubilay, you mastered the foundation of the lesson quickly and were able to move onto sophisticated sentence building, which is excellent preparation for your exams.</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm sm:text-base pl-4">
+                <li><span class="font-bold">Natural Use of 'But' and 'So':</span> You consistently and correctly used <strong>but</strong> for contrast and <strong>so</strong> for consequence (e.g., "...I get less paid leave <strong>so</strong> I would rather visit my family..."). This makes your speaking much clearer and more advanced.</li>
+                <li><span class="font-bold">Command of Used To:</span> You successfully made the conversion between affirmative (<strong>used to</strong>) and negative (<strong>never used to</strong>) sentences when comparing past and present, demonstrating high accuracy in the target language.</li>
+                <li><span class="font-bold">Answering with Detail (W's):</span> You immediately integrated the prompt to answer questions with detail (When, Why, Where, With Who), allowing you to sustain complex conversation about your habits and life.</li>
+                <li><span class="font-bold">Adverb Placement:</span> You showed excellent control by correctly positioning adverbs like <strong>usually</strong> and <strong>often</strong> before the main verb in your description of current habits. (e.g., "I <strong>usually</strong> visit my hometown..." and "I <strong>often</strong> go for a walk...").</li>
+            </ul>
+        </section>
+
+        <section id="noted-success" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Noted Success! ✨✨✨</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base leading-relaxed">You created several sentences that perfectly blended <strong>used to</strong>, connectors, and strong vocabulary. This ability to link several ideas is a significant jump in fluency!</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-3 text-sm sm:text-base pl-4">
+                <li><span class="font-bold">Sentence 1: Expressing Preference & Reason (02:44:53):</span>
+                    <br><span class="text-gray-800 font-semibold text-sm sm:text-base">"I <strong>used to</strong> go to Europe all the time when I lived in Turkey, <strong>but since</strong> I moved to the UK I get a lot less paid leave <strong>so</strong> I <strong>would rather</strong> visit my family with that time off of work."</span>
+                    <br><span class="text-gray-600 text-xs italic"> (This sentence successfully uses *used to*, *since*, *less*, *so*, and *would rather*—a powerful display of integrated grammar.)</span></li>
+                <li><span class="font-bold">Sentence 2: Explaining a Core Difference (02:50:41):</span>
+                    <br><span class="text-gray-800 font-semibold text-sm sm:text-base">"I <strong>used to</strong> eat fresh vegetables... <strong>because</strong> Turkey is <strong>Mediterranean</strong>... <strong>But</strong> now I <strong>don't</strong> find fresh vegetables... <strong>so</strong> I <strong>often</strong> eat frozen food in the UK."</span>
+                    <br><span class="text-gray-600 text-xs italic"> (A concise and detailed argument about the difference in food quality, perfectly using multiple connectors.)</span></li>
+            </ul>
+        </section>
+
+        <section id="mistakes" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Mistake Analysis: Learning & Growing 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some key errors to focus on. Focus on the core mechanics of verbs and prepositions!</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Phrasal Verbs and Prepositions</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "I go <span style="color: #D0021B;">to</span> walking." / "I go <span style="color: #D0021B;">to</span> shopping."</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction 1: "I go <strong>for a walk</strong>." / "I go <strong>shopping</strong>."</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction 2: "I ride <strong>my bike</strong> to work." (Used to ride bike) </p>
+                    </div>
+                    <p class="text-gray-600 text-sm mt-4"><strong>Teacher's Note:</strong> When talking about activities, use <strong>go + -ing</strong> (go shopping, go walking) or the noun form <strong>go for a walk</strong>. Also, use <strong>by bike</strong> or <strong>ride my bike</strong> for cycling!</p>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Grammar & Subject-Verb Agreement</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "My manager, <span style="color: #D0021B;">don't</span> think."</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: "My manager <strong>doesn't</strong> think." (The manager is <strong>He/She</strong>, so it needs the <strong>-s</strong> form: <strong>does</strong>.)</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "I <strong>must to</strong> speak English..." / "He <span style="color: #D0021B;">was</span> die."</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: "I <strong>had to</strong> speak English..." / "He <strong>died</strong>." (Be careful not to mix tenses or add 'to' after modal verbs like 'must' or 'had to'.)</p>
+                    </div>
+                    <p class="text-gray-600 text-sm mt-4"><strong>Teacher's Note:</strong> The simplest mistake to fix is Subject-Verb Agreement. Review the auxiliary verb table in the next section!</p>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Word Choice & Vocabulary</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Word: <span style="color: #D0021B;">ugly</span> (sleep)</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: <strong>early</strong> (sleep <strong>early</strong>)</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Word: <span style="color: #D0021B;">documeting</span> / <span style="color: #D0021B;">documeneries</span></p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: <strong>documentaries</strong> (Focus on the /men/ syllable: doc-u-men-ta-ries)</p>
+                    </div>
+                    <p class="text-gray-600 text-sm mt-4"><strong>Teacher's Note:</strong> Continue practising pronunciation for long words like documentaries. The core message is always clear!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="grammar-review" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Grammar Review: Used To (Past Habits) 📝</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Remember, <strong>used to</strong> is a fixed structure—you do not change the form of the main verb!</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Structure: Used To</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-md overflow-hidden">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6 text-left">Form</th>
+                                    <th class="py-3 px-6 text-left">Structure</th>
+                                    <th class="py-3 px-6 text-left">Example</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 text-sm">
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap"><strong>Positive</strong> (+)</td>
+                                    <td class="py-3 px-6 text-left">Subject + <strong>used to</strong> + Base Verb (V1)</td>
+                                    <td class="py-3 px-6 text-left">I <strong>used to live</strong> in Turkey.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap"><strong>Negative</strong> (-)</td>
+                                    <td class="py-3 px-6 text-left">Subject + <strong>never used to</strong> + Base Verb (V1) <br> (OR Subject + didn't use to)</td>
+                                    <td class="py-3 px-6 text-left">I <strong>never used to like</strong> spicy food.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap"><strong>Question</strong> (?)</td>
+                                    <td class="py-3 px-6 text-left">Did + Subject + <strong>use to</strong> + Base Verb (V1)</td>
+                                    <td class="py-3 px-6 text-left">Did you <strong>use to play</strong> soccer?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Verb Agreement Review (Simple Present)</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">Reminder on forming negatives in the Present Simple, which is essential for contrasting with past habits:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">I, You, We, They:</span> Use <strong>don't</strong> (e.g., I <strong>don't</strong> play basketball at all.)</li>
+                        <li><span class="font-bold">He, She, It:</span> Use <strong>doesn't</strong> (e.g., My manager <strong>doesn't</strong> think.)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="nextsteps" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Your Next Steps: Keep Growing! 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some extra resources to help you solidify the use of <strong>used to</strong> and integrate the adverbs of frequency we practiced.</p>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Additional Resources for Practice 📚</h3>
+            <p class="text-gray-700 mb-4 text-sm sm:text-base">Focus on practicing these topics when chatting with Semin or other non-Turkish speakers!</p>
+
+            <div class="space-y-4">
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Video Explainer: Used To - Past Habits</p>
+                    <div class="video-container">
+                        <a href="https://www.youtube.com/watch?v=76QG8W4gE7U" target="_blank" class="block relative">
+                            <!-- This image is a placeholder for the YouTube Logo with title text -->
+                            <img src="https://placehold.co/1280x720/FF0000/ffffff?text=YouTube%20Logo" alt="Click to Watch: Used To - Past Habits on YouTube" class="image-resource" style="filter: brightness(70%);"/>
+                            <div class="youtube-logo-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="white" width="40" height="40">
+                                    <path d="M549.655 124.083c-6.232-23.5-24.494-41.762-48.053-48.057C486.29 64 288 64 288 64S89.71 64 74.4 76.026c-23.559 6.295-41.821 24.557-48.053 48.057C16 140.384 16 256 16 256s0 115.616 10.347 131.917c6.232 23.5 24.494 41.762 48.053 48.057C89.71 448 288 448 288 448s198.29 0 213.6-12.026c23.559-6.295 41.821-24.557 48.053-48.057C560 371.616 560 256 560 256s0-115.616-10.345-131.917zM232 355V157L384 256 232 355z"/>
+                                </svg>
+                                <span class="text-white font-bold text-base">Watch on YouTube</span>
+                                <span class="text-white text-xs mt-0">Used To - Past Habits</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Video Practice: Adverbs of Frequency</p>
+                    <div class="video-container">
+                        <a href="https://www.youtube.com/watch?v=S0T09t9Nq1I" target="_blank" class="block relative">
+                            <!-- This image is a placeholder for the YouTube Logo with title text -->
+                            <img src="https://placehold.co/1280x720/FF0000/ffffff?text=YouTube%20Logo" alt="Click to Watch: Adverbs of Frequency on YouTube" class="image-resource" style="filter: brightness(70%);"/>
+                            <div class="youtube-logo-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="white" width="40" height="40">
+                                    <path d="M549.655 124.083c-6.232-23.5-24.494-41.762-48.053-48.057C486.29 64 288 64 288 64S89.71 64 74.4 76.026c-23.559 6.295-41.821 24.557-48.053 48.057C16 140.384 16 256 16 256s0 115.616 10.347 131.917c6.232 23.5 24.494 41.762 48.053 48.057C89.71 448 288 448 288 448s198.29 0 213.6-12.026c23.559-6.295 41.821-24.557 48.053-48.057C560 371.616 560 256 560 256s0-115.616-10.345-131.917zM232 355V157L384 256 232 355z"/>
+                                </svg>
+                                <span class="text-white font-bold text-base">Watch on YouTube</span>
+                                <span class="text-white text-xs mt-0">Adverbs of Frequency</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Reading: The Tale of Two Kubilays (Past vs. Present)</p>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">This article contrasts your life in Kadıköy, Turkey, with your life now in London, focusing on the structures we learned.</p>
+                    <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                        The Istanbul Kubilay and the London Kubilay are two different men! The Istanbul Kubilay <strong>used to</strong> eat <strong>fresh vegetables</strong> all the time, because the quality in Turkey was great. Now, the London Kubilay <strong>often</strong> eats <strong>frozen food</strong> because he <strong>can't</strong> find the same freshness in the UK.
+                        <br><br>
+                        In Kadıköy, Kubilay <strong>used to run</strong> three days a week, but since he moved to a colder climate, he <strong>doesn't</strong> run <strong>at all</strong>. He <strong>used to meditate</strong> every day, but now his job working with <strong>numbers and data</strong> is so intense that his <strong>brain is like jam</strong> after work, <strong>so</strong> he <strong>never</strong> meditates.
+                        <br><br>
+                        However, the London Kubilay has learned a powerful secret: <strong>he often</strong> takes <strong>15,000 steps a day</strong> because <strong>he is hyperactive</strong> and needs to <strong>use up some energy</strong> to <strong>help him get to sleep at night</strong>! Also, he <strong>never used to</strong> care about money, <strong>but now</strong> he's thinking about moving because he <strong>gets less paid leave</strong> and <strong>would rather</strong> visit his family.
+                    </p>
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3 mt-4">Definitions from the Reading</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">Fresh vegetables:</span> Vegetables that are not frozen or old.</li>
+                        <li><span class="font-bold">Frozen food:</span> Food preserved by being kept at a very low temperature.</li>
+                        <li><span class="font-bold">Brain is like jam:</span> (Informal) Your brain is tired, blocked, or slow after too much work.</li>
+                        <li><span class="font-bold">Hyperactive:</span> Having too much energy; restless.</li>
+                        <li><span class="font-bold">Paid leave:</span> Time off work that you are paid for (holidays/vacation).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="next-class-info" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Next Class Information 📅</h2>
+            <p class="text-gray-700 text-center text-sm sm:text-base leading-relaxed">Our next class is scheduled for <strong>Wednesday at 4 PM</strong> (16:00). We will begin by reviewing <strong>Adverbs of Frequency</strong> and then move on to the second use of <strong>used to</strong>: <strong>getting used to</strong> things!</p>
+        </section>
+    </main>
+</body>
+</html>
