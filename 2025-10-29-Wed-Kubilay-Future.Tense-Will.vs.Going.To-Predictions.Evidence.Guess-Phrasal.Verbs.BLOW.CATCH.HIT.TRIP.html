@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubilay's Lesson Feedback</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/TQ8mdtg.png"> <!-- Favicon link updated -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Chart.js is removed as per request -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #E6E6FA; color: #333333; } /* Calming lavender background */
+        .chart-container { position: relative; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; height: 300px; max-height: 350px; }
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #E6E6FA; } /* Scrollbar track matches new background */
+        ::-webkit-scrollbar-thumb { background: #4A90E2; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FFD700; }
+        .bg-accent-1 { background-color: #4A90E2; }
+        .text-accent-1 { color: #4A90E2; }
+        .bg-accent-2 { color: #6B8E23; }
+        .text-accent-2 { color: #6B8E23; }
+        .bg-error-light { background-color: #F8D7DA; }
+        .text-error-dark { color: #D0021B; }
+        .bg-success-light { background-color: #D4EDDA; }
+        .text-success-dark { color: #1E8449; }
+        .border-accent-1 { border-color: #4A90E2; }
+        .text-muted-purple { color: #8A2BE2; }
+        .video-container {
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f3f4f6; /* Tailwind gray-100 */
+        }
+        .video-container a {
+            display: block;
+            position: relative;
+            cursor: pointer;
+        }
+        .video-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            min-height: 150px; /* Ensure visibility on mobile */
+            object-fit: cover;
+        }
+        /* Custom styles for the YouTube logo placeholder */
+        .youtube-logo-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 200px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #FF0000;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+        .youtube-logo-overlay span {
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-accent-1">Kubilay's Progress Dashboard ✨</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#snapshot" class="hover:text-accent-2 transition duration-300">Overview</a></li>
+                <li><a href="#language" class="hover:text-accent-2 transition duration-300">Language</a></li>
+                <li><a href="#strengths" class="hover:text-accent-2 transition duration-300">Strengths</a></li>
+                <li><a href="#noted-success" class="hover:text-accent-2 transition duration-300">Success</a></li>
+                <li><a href="#mistakes" class="hover:text-accent-2 transition duration-300">Mistakes</a></li>
+                <li><a href="#grammar-review" class="hover:text-accent-2 transition duration-300">Grammar Review</a></li>
+                <li><a href="#nextsteps" class="hover:text-accent-2 transition duration-300">Next Steps</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-8 md:p-12 max-w-4xl">
+        <section id="intro" class="text-center mb-10 md:mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3">Your Lesson Feedback: A Journey of Growth! 🚀</h2>
+            <p class="text-base sm:text-lg text-gray-600 leading-relaxed">Kubilay, this report highlights your fantastic session focused on comparing <strong>Past Habits</strong> versus <strong>Present Habits</strong>. The core goal was mastering the use of <strong>used to</strong> and integrating <strong>Adverbs of Frequency</strong> to add detail to your stories. Let's explore your great work!</p>
+        </section>
+
+        <section id="snapshot" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Lesson Overview 📊</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">This section gives you an overview of our conversation today, showing the main topic we covered.</p>
+
+            <div class="flex flex-col items-center justify-center">
+                <div class="mb-4 text-center">
+                    <p class="text-base sm:text-lg text-gray-800 font-bold mb-2">Lesson Date: October 29, 2025</p>
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle mr-2 text-accent-1"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Total Lesson Duration:
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle ml-2 text-accent-2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </p>
+                    <p class="text-4xl sm:text-5xl font-extrabold text-muted-purple">2h 06m</p>
+                    <p class="text-gray-500 text-sm sm:text-base">(126 minutes of active time)</p>
+                </div>
+            </div>
+            <p class="text-gray-700 mt-8 text-center text-sm sm:text-base leading-relaxed">Kubilay, you excelled in contrasting your old life in Turkey with your new life in London! You built many excellent, long sentences using <strong>used to</strong> and <strong>never used to</strong>. Keep focusing on integrating those essential connectors (<strong>but, because, so</strong>) to make your explanations richer and clearer, especially for comparison tasks in the GESE exam!</p>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mt-10 mb-4 text-center">What We Talked About: Topic Summary 🎯</h3>
+            <p class="text-gray-700 text-center text-sm sm:text-base leading-relaxed">Today, we established the core usage of <strong>used to</strong> (for actions or states that were regular in the past but are completely stopped now) and <strong>never used to</strong> (for actions that didn't happen in the past but happen now). We used <strong>Adverbs of Frequency</strong> (like <strong>often</strong> and <strong>rarely</strong>) to make your present habits clearer. You successfully built compound sentences by linking ideas with <strong>but</strong> (contrast), <strong>because</strong> (reason), and <strong>so</strong> (result). This skill of creating long, multi-clause sentences is crucial for moving beyond the A2 level!</p>
+        </section>
+
+        <section id="language" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Language Highlights: Your New Tools! 🛠️</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some key language points you used and learned today. Read through these examples!</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Future Tenses: Will vs. Going To</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">Mastering the choice between <strong>will</strong> (for spontaneous offers/weak guesses) and <strong>going to</strong> (for pre-planned actions/evidence-based predictions) is key for the B1 level.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><strong>Spontaneous Plan/Offer (Will):</strong> "Oh, you forgot your wallet? <strong>I'll pay</strong>." (Decision made instantly).</li>
+                        <li><strong>Weak Guess/Feeling (Will):</strong> "I think robots <strong>will</strong> do most physical jobs by 2099." (No hard evidence, just a feeling).</li>
+                        <li><strong>Strong/Evidence Prediction (Going To):</strong> "She's <strong>going to fall down</strong>." (Evidence: She is standing on a toy car).</li>
+                        <li><strong>Pre-planned Action (Going To):</strong> "I'm <strong>going to go to a basketball game</strong> tonight with Semin." (Tickets are booked, it's a plan).</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">New Vocabulary & Expressions</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">You strengthened your conversational range by using these descriptive words and phrases:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">Bless you:</span> The polite response when someone sneezes.</li>
+                        <li><span class="font-bold">Sneeze / Cough:</span> <strong>Sneeze</strong> is a quick action (I've been sneezing); <strong>Cough</strong> is a condition (I have a cough).</li>
+                        <li><span class="font-bold">Like a...:</span> Used for vivid comparisons (e.g., "He sneezes <strong>like a</strong> rhinoceros").</li>
+                        <li><span class="font-bold">Blow out / Blow up:</span> <strong>Blow out</strong> (fire/candles); <strong>Blow up</strong> (balloon/explosion).</li>
+                        <li><span class="font-bold">Catch a flight/train:</span> Means to quickly get transport (e.g., "I'm going to <strong>catch the overground</strong>.").</li>
+                        <li><span class="font-bold">Materialism:</span> The tendency to consider material possessions and physical comfort as more important than spiritual values.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="strengths" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Your Strengths: What You Did Great! ⭐</h2>
+            <p class="text-700 mb-8 text-center text-sm sm:text-base leading-relaxed">Kubilay, you mastered the foundation of the lesson quickly and were able to move onto sophisticated sentence building, which is excellent preparation for your exams.</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm sm:text-base pl-4">
+                <li><span class="font-bold">Instant Spontaneous Offers:</span> You performed exceptionally well in the role-play, instantly recognizing a spontaneous need (broken printer, forgot wallet) and correctly offering help using the <strong>I'll</strong> contraction and <strong>will</strong>. (e.g., "I'll <strong>share</strong> my internet," "I'll <strong>pay</strong>").</li>
+                <li><span class="font-bold">Advanced Vocabulary for Prediction:</span> You successfully integrated higher-level vocabulary like <strong>cyborgs</strong>, <strong>augmented by technology</strong>, and <strong>materialism</strong> when discussing the future, demonstrating complex conceptual thinking.</li>
+                <li><span class="font-bold">Pronunciation of Contractions:</span> You showed excellent awareness and practice of informal contractions like <strong>I'll</strong> (I will), and quickly picked up on the rapid pronunciation of <strong>I'll do that</strong> (I'll do that).</li>
+            </ul>
+        </section>
+
+        <section id="noted-success" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Noted Success! ✨✨✨</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base leading-relaxed">Your most potent skill displayed today was merging conditional logic with future tenses, demonstrating an integrated understanding of how likelihood affects verb choice.</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-3 text-sm sm:text-base pl-4">
+                <li><span class="font-bold">Sentence 1: Expressing Likelihood (01:47:57):</span>
+                    <br><span class="text-gray-800 font-semibold text-sm sm:text-base">"If I <strong>live</strong> another 50 years, I think technology <strong>might be able to help</strong> me to live to be 200 years old."</span>
+                    <br><span class="text-gray-600 text-xs italic"> (Using 'live' (Present Simple) correctly indicated this was a POSSIBLE prediction, even though the idea itself is fantastic!)</span></li>
+                <li><span class="font-bold">Sentence 2: Philosophical Prediction (01:54:59):</span>
+                    <br><span class="text-gray-800 font-semibold text-sm sm:text-base">"I am a <strong>pessimist</strong>. I think people are <strong>materialistic</strong>. <strong>Materialism is increasing</strong> day by day."</span>
+                    <br><span class="text-gray-600 text-xs italic"> (Excellent display of subject-specific vocabulary and advanced political/social commentary.)</span></li>
+            </ul>
+        </section>
+
+        <section id="mistakes" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Mistake Analysis: Learning & Growing 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Your core focus should be on recognizing strong evidence (use <strong>going to</strong>) versus weak evidence (<strong>will</strong>).</p>
+
+            <div class="space-y-6">
+                <!-- START New Will / Going To Tables -->
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3 text-center">The Functions of WILL (Spontaneous & Opinion)</h3>
+                    <p class="text-gray-700 mb-4 text-sm sm:text-base">Use <strong>WILL</strong> for decisions made <strong>at the moment of speaking</strong> (spontaneous) or predictions based on <strong>personal opinion/feeling</strong> (weak evidence).</p>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-md overflow-hidden">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-4 text-left">Function</th>
+                                    <th class="py-3 px-4 text-left">Example from Lesson</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 text-sm">
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-4 text-left whitespace-nowrap"><strong>Spontaneous Offer</strong></td>
+                                    <td class="py-3 px-4 text-left">"Oh, you forgot your wallet? <strong>I'll pay</strong>."</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-4 text-left whitespace-nowrap"><strong>Opinion / Weak Guess</strong></td>
+                                    <td class="py-3 px-4 text-left">"I think people <strong>will be</strong> unhappy in 2099."</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3 text-center">The Functions of GOING TO (Plan & Evidence)</h3>
+                    <p class="text-gray-700 mb-4 text-sm sm:text-base">Use <strong>GOING TO</strong> for actions decided <strong>before speaking</strong> (plans) or predictions based on <strong>present, physical evidence</strong> (strong evidence).</p>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-md overflow-hidden">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-4 text-left">Function</th>
+                                    <th class="py-3 px-4 text-left">Example from Lesson</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 text-sm">
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-4 text-left whitespace-nowrap"><strong>Pre-Planned Action</strong></td>
+                                    <td class="py-3 px-4 text-left">"I'm <strong>going to go</strong> to the basketball game tonight."</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-4 text-left whitespace-nowrap"><strong>Evidence-Based Prediction</strong></td>
+                                    <td class="py-3 px-4 text-left">"She's <strong>going to fall down</strong>." (She is stepping on a toy.)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- END New Will / Going To Tables -->
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Phrasal Verb & Article Errors</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "She's going to blow <span style="color: #D0021B;">up</span> the candles."</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: "She's going to <strong>blow out</strong> the candles."</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "I'm going to go to <span style="color: #D0021B;">a</span> basketball game... so I'm going to go to <span style="color: #D0021B;">the</span> basketball game."</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: Always use <strong>a</strong> first (introducing the topic), then <strong>the</strong> (referring back). You can combine them: "I'm going to <strong>a</strong> game, so do you want to join <strong>the</strong> game?"</p>
+                    </div>
+                    <p class="text-gray-600 text-sm mt-4"><strong>Teacher's Note:</strong> Practice <strong>a/the</strong> rules. If you both know the object, use <strong>the</strong>. If you are introducing it, use <strong>a</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="grammar-review" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Grammar Review: Future Tenses (Will vs. Going To) 📝</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Use this table to quickly check your future tense decisions:</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Will / Won't (Spontaneous, Guess, Opinion)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-md overflow-hidden">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6 text-left">Function</th>
+                                    <th class="py-3 px-6 text-left">Structure</th>
+                                    <th class="py-3 px-6 text-left">Example</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 text-sm">
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap"><strong>Spontaneous Offer</strong></td>
+                                    <td class="py-3 px-6 text-left">Subject + <strong>'ll</strong> / <strong>will</strong> + Base Verb</td>
+                                    <td class="py-3 px-6 text-left">I <strong>will</strong> call management. / I'<strong>ll</strong> go.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap"><strong>Opinion/Guess</strong></td>
+                                    <td class="py-3 px-6 text-left">I think/I feel + Subject + <strong>will</strong> + Base Verb</td>
+                                    <td class="py-3 px-6 text-left">I think the world <strong>will be worse</strong>.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Going To (Plans, Intentions, Evidence)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-md overflow-hidden">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6 text-left">Function</th>
+                                    <th class="py-3 px-6 text-left">Structure</th>
+                                    <th class="py-3 px-6 text-left">Example</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 text-sm">
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap"><strong>Planned Action</strong></td>
+                                    <td class="py-3 px-6 text-left">Subject + <strong>to be</strong> + <strong>going to</strong> + Base Verb</td>
+                                    <td class="py-3 px-6 text-left">I'm <strong>going to go</strong> to the game.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap"><strong>Evidence-Based Prediction</strong></td>
+                                    <td class="py-3 px-6 text-left">Subject + <strong>to be</strong> + <strong>going to</strong> + Base Verb</td>
+                                    <td class="py-3 px-6 text-left">She's <strong>going to fall down</strong>.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nextsteps" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Your Next Steps: Keep Growing! 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some extra resources to help you solidify the use of <strong>used to</strong> and integrate the adverbs of frequency we practiced.</p>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Additional Resources for Practice 📚</h3>
+            <p class="text-gray-700 mb-4 text-sm sm:text-base">Focus on practicing these topics when chatting with Semin or other non-Turkish speakers!</p>
+
+            <div class="space-y-4">
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Video Explainer: Will vs. Going To</p>
+                    <div class="video-container">
+                        <a href="https://www.youtube.com/watch?v=k8vJgJv4rI0" target="_blank" class="block relative">
+                            <!-- Placeholder image with YouTube logo and text -->
+                            <img src="https://placehold.co/1280x720/FF0000/ffffff?text=YouTube%20Logo" alt="Click to Watch: Will vs. Going To on YouTube" class="image-resource" style="filter: brightness(70%);"/>
+                            <div class="youtube-logo-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="white" width="40" height="40">
+                                    <path d="M549.655 124.083c-6.232-23.5-24.494-41.762-48.053-48.057C486.29 64 288 64 288 64S89.71 64 74.4 76.026c-23.559 6.295-41.821 24.557-48.053 48.057C16 140.384 16 256 16 256s0 115.616 10.347 131.917c6.232 23.5 24.494 41.762 48.053 48.057C89.71 448 288 448 288 448s198.29 0 213.6-12.026c23.559-6.295 41.821-24.557 48.053-48.057C560 371.616 560 256 560 256s0-115.616-10.345-131.917zM232 355V157L384 256 232 355z"/>
+                                </svg>
+                                <span class="text-white font-bold text-base">Watch on YouTube</span>
+                                <span class="text-white text-xs mt-0">Future with Will and Going To</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Video Practice: Future Predictions (Evidence)</p>
+                    <div class="video-container">
+                        <a href="https://www.youtube.com/watch?v=F_S6d2Rk430" target="_blank" class="block relative">
+                            <!-- Placeholder image with YouTube logo and text -->
+                            <img src="https://placehold.co/1280x720/FF0000/ffffff?text=YouTube%20Logo" alt="Click to Watch: Future Predictions on YouTube" class="image-resource" style="filter: brightness(70%);"/>
+                            <div class="youtube-logo-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="white" width="40" height="40">
+                                    <path d="M549.655 124.083c-6.232-23.5-24.494-41.762-48.053-48.057C486.29 64 288 64 288 64S89.71 64 74.4 76.026c-23.559 6.295-41.821 24.557-48.053 48.057C16 140.384 16 256 16 256s0 115.616 10.347 131.917c6.232 23.5 24.494 41.762 48.053 48.057C89.71 448 288 448 288 448s198.29 0 213.6-12.026c23.559-6.295 41.821-24.557 48.053-48.057C560 371.616 560 256 560 256s0-115.616-10.345-131.917zM232 355V157L384 256 232 355z"/>
+                                </svg>
+                                <span class="text-white font-bold text-base">Watch on YouTube</span>
+                                <span class="text-white text-xs mt-0">Future Predictions (Evidence)</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Reading: The Spontaneous Promotion</p>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">This story highlights several instances where Kubilay made spontaneous offers (<strong>I'll</strong>) during the lesson, demonstrating his readiness for promotion!</p>
+                    <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                        It was a chaotic day in the office—a typical day, Kubilay thought. The printer was broken, the internet was down, and the manager was stuck in Malta. Then, the boss walked in, frustrated. "The big report is due Friday, and I'm too busy!" he exclaimed.
+                        <br><br>
+                        Kubilay immediately jumped in, using spontaneous <strong>will</strong> perfectly: "<strong>I'll</strong> do the report for you." The boss smiled, but then realized, "The internet is down!" Again, Kubilay responded instantly: "<strong>I'll</strong> share my internet."
+                        <br><br>
+                        Later, at lunch, the boss admitted he forgot his wallet. Kubilay didn't hesitate: "<strong>I'll pay</strong>."
+                        <br><br>
+                        The boss looked at Kubilay and said, "I think technology <strong>will</strong> definitely make jobs easier someday, but until then, I see you are indispensable. I'm <strong>going to promote you</strong> next quarter. Now, <strong>I'm going to</strong> stay here to work, but I forgot my laptop!"
+                        <br><br>
+                        Kubilay, excited but calm, made his final, spontaneous offer: "If you want, <strong>I'll</strong> run to the office and <strong>come back</strong> with a taxi!"
+                    </p>
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3 mt-4">Definitions from the Reading</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">Indispensable:</span> Absolutely necessary; essential.</li>
+                        <li><span class="font-bold">Chaotic:</span> In a state of confusion and disorder.</li>
+                        <li><span class="font-bold">Exclaimed:</span> Cried out suddenly in surprise, anger, or pain.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="next-class-info" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Next Class Information 📅</h2>
+            <p class="text-gray-700 text-center text-sm sm:text-base leading-relaxed">Our next class is scheduled for <strong>Sunday at 4 PM</strong> (16:00). We will review the key concepts of prediction and plan, and then move on to the level 5 requirement of discussing <strong>preferences</strong>.</p>
+        </section>
+    </main>
+</body>
+</html>
