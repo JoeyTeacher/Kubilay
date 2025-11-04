@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubilay's Lesson Feedback</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/TQ8mdtg.png"> <!-- Favicon link updated -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Chart.js is removed as per request -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #E6E6FA; color: #333333; } /* Calming lavender background */
+        .chart-container { position: relative; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; height: 300px; max-height: 350px; }
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #E6E6FA; } /* Scrollbar track matches new background */
+        ::-webkit-scrollbar-thumb { background: #4A90E2; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FFD700; }
+        .bg-accent-1 { background-color: #4A90E2; }
+        .text-accent-1 { color: #4A90E2; }
+        .bg-accent-2 { color: #6B8E23; }
+        .text-accent-2 { color: #6B8E23; }
+        .bg-error-light { background-color: #F8D7DA; }
+        .text-error-dark { color: #D0021B; }
+        .bg-success-light { background-color: #D4EDDA; }
+        .text-success-dark { color: #1E8449; }
+        .border-accent-1 { border-color: #4A90E2; }
+        .text-muted-purple { color: #8A2BE2; }
+        .video-container {
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        /* Style the anchor to look like a placeholder container */
+        .video-container a {
+            display: block;
+            position: relative;
+            cursor: pointer;
+        }
+        .video-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+        /* Added play button overlay for better visual affordance */
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 42px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        .play-overlay:hover {
+            background-color: rgba(200, 0, 0, 0.9);
+        }
+        .play-overlay svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+        .image-resource {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-accent-1">Kubilay's Progress Dashboard ✨</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#snapshot" class="hover:text-accent-2 transition duration-300">Overview</a></li>
+                <li><a href="#language" class="hover:text-accent-2 transition duration-300">Language</a></li>
+                <li><a href="#strengths" class="hover:text-accent-2 transition duration-300">Strengths</a></li>
+                <li><a href="#noted-success" class="hover:text-accent-2 transition duration-300">Success</a></li>
+                <li><a href="#mistakes" class="hover:text-accent-2 transition duration-300">Mistakes</a></li>
+                <li><a href="#grammar-review" class="hover:text-accent-2 transition duration-300">Grammar Review</a></li>
+                <li><a href="#nextsteps" class="hover:text-accent-2 transition duration-300">Next Steps</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-8 md:p-12 max-w-4xl">
+        <section id="intro" class="text-center mb-10 md:mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3">Your Lesson Feedback: A Journey of Growth! 🚀</h2>
+            <p class="text-base sm:text-lg text-gray-600 leading-relaxed">Kubilay, this report highlights your amazing progress from our last lesson. The core focus was on the <strong>First and Second Conditionals</strong> (talking about reality vs. imagination), exploring their relationship with <strong>will</strong> / <strong>would</strong>, and understanding the difference between <strong>can</strong> and <strong>be able to</strong>. Let's explore your fantastic work!</p>
+        </section>
+
+        <section id="snapshot" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Lesson Overview 📊</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">This section gives you an overview of our conversation today, showing the main topic we covered.</p>
+
+            <div class="flex flex-col items-center justify-center">
+                <div class="mb-4 text-center">
+                    <p class="text-base sm:text-lg text-gray-800 font-bold mb-2">Lesson Date: October 8, 2025</p>
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle mr-2 text-accent-1"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Total Lesson Duration:
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle ml-2 text-accent-2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </p>
+                    <p class="text-4xl sm:text-5xl font-extrabold text-muted-purple">2h 27m</p>
+                    <p class="text-gray-500 text-sm sm:text-base">(and 0 seconds)</p>
+                </div>
+            </div>
+            <p class="text-gray-700 mt-8 text-center text-sm sm:text-base leading-relaxed">Kubilay, you maintained a high level of engagement and confidence throughout this challenging lesson. You took ownership of your learning by frequently asking for clarification, especially on complex topics like the subtle difference between <strong>can</strong> and <strong>be able to</strong>. This excellent self-awareness is key to your rapid A2 progress!</p>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mt-10 mb-4 text-center">What We Talked About: Topic Summary 🎯</h3>
+            <p class="text-gray-700 text-center text-sm sm:text-base leading-relaxed">Today, we focused on using the <strong>First Conditional</strong> (for real, possible future situations) and the <strong>Second Conditional</strong> (for unreal, impossible, or imaginary present/future situations). You correctly identified the core rule: <strong>Simple Present</strong> in the 'If' clause signals a likely outcome (<strong>First Conditional</strong>), while <strong>Simple Past</strong> in the 'If' clause signals an imaginary outcome (<strong>Second Conditional</strong>). We then used this structure to integrate <strong>Modal Verbs</strong> and prefixes like <strong>un-</strong> to add color and nuance to your speech. We ended with Zero Conditionals (for facts/routines) and set up the next lesson for <strong>Modals</strong> (like <strong>should, could, might</strong>).</p>
+        </section>
+
+        <section id="language" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Language Highlights: Your New Tools! 🛠️</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some key language points you used and learned today. Read through these examples!</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">First Conditional (Likely Outcome)</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">We use this for situations that are real or very likely to happen. The value of this is clearly communicating your future plans or warnings.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li>"If I <strong>improve</strong> my English, I <strong>will get</strong> a promotion."</li>
+                        <li>"If my boss <strong>doesn't give</strong> me a raise in 3 months, I'<strong>ll quit</strong>."</li>
+                        <li>"When I <strong>next go</strong> to McDonald's, I <strong>will buy</strong> a double cheeseburger." (Using <strong>when</strong> makes the situation even more certain!)</li>
+                        <li>"If I <strong>can</strong>, I <strong>will</strong>."</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Second Conditional (Imaginary Outcome)</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">We use this for imagined, unlikely, or impossible situations. The value of this structure is expressing wishes, dreams, and hypothetical advice.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li>"If I <strong>had</strong> a week off work next week, I <strong>would fly</strong> to Turkey for a quick trip."</li>
+                        <li>"If I <strong>were</strong> a superhero, I <strong>would fly</strong>."</li>
+                        <li>"If I <strong>missed</strong> my bus, I'<strong>d have to</strong> take a taxi." (Pam's unlikely scenario)</li>
+                        <li>"If I <strong>could</strong>, I <strong>would</strong>."</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Can vs. Be Able To (Ability)</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">You mastered the important difference! Using <strong>be able to</strong> is key when discussing external obstacles preventing ability (which <strong>can</strong> does not usually express).</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li>"<strong>Can</strong> you play soccer?" (Internal skill: Do you know how?)</li>
+                        <li>"I <strong>can</strong> speak English, but right now I am <strong>unable to</strong> (because the dentist injected my mouth)." (Temporary external problem.)</li>
+                        <li>"I wouldn't <strong>be able to</strong> save money (because the high London rent is the external problem)."</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">New Vocabulary & Prefixes</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">Tardy:</span> A formal word for always being <strong>late</strong>.</li>
+                        <li><span class="font-bold">Punctual:</span> Always being <strong>on time</strong>.</li>
+                        <li><span class="font-bold">Sleep in:</span> To sleep later than usual (especially on the weekend).</li>
+                        <li><span class="font-bold">Un- (prefix):</span> Means <strong>not</strong> or the <strong>opposite action</strong> (e.g., <strong>un</strong>safe, <strong>un</strong>fair, <strong>un</strong>lock, <strong>un</strong>well, <strong>un</strong>comfortable). This prefix is very common and a powerful tool!</li>
+                        <li><span class="font-bold">Talk shit about someone:</span> (Informal) To speak negatively about someone when they are not present.</li>
+                        <li><span class="font-bold">Grandfather Law (Expression):</span> A rule that says a new law will <strong>not</strong> apply to people who were already doing that thing before the law changed.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="strengths" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Your Strengths: What You Did Great! ⭐</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base leading-relaxed">Kubilay, you tackled some very complex grammar this week with a fantastic attitude. Here are your key strengths:</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm sm:text-base pl-4">
+                <li><span class="font-bold">Perfect Use of First Conditional:</span> You immediately applied the <strong>Simple Present</strong> + <strong>will</strong> structure when talking about realistic work scenarios (e.g., quitting your job if you don't get a raise, getting a promotion if you improve your English). This shows great control over the basic rule.</li>
+                <li><span class="font-bold">High Tolerance for Complex Correction:</span> You demonstrated patience and focus during the extended session on <strong>able to</strong> versus <strong>can</strong>, asking clarifying questions until you fully understood the subtle differences. This commitment to accuracy is the hallmark of an advanced learner.</li>
+                <li><span class="font-bold">Excellent Use of Prefixes:</span> You quickly adopted and correctly used the prefix <strong>un-</strong> with multiple words (<strong>un</strong>safe, <strong>un</strong>fair, <strong>un</strong>comfortable, <strong>un</strong>known), which greatly expands your vocabulary range and ability to form opposites on the fly.</li>
+                <li><span class="font-bold">Strong Conditional Chain Creation:</span> You ended the lesson with a complex, multi-step thought process: "If I <strong>improve</strong> my English, I <strong>will get</strong> a promotion. If I <strong>get</strong> a promotion, I'<strong>ll earn</strong> more money. If I <strong>have</strong> more money, I'<strong>ll quit</strong> my job." This demonstrates mastery of linking clauses and is excellent for GESE exam fluidity!</li>
+            </ul>
+        </section>
+
+        <section id="noted-success" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Noted Success! ✨✨✨</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base leading-relaxed">The biggest success in this lesson was your willingness to try <strong>fast contractions</strong>, which dramatically improves your natural fluency and pronunciation.</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-3 text-sm sm:text-base pl-4">
+                <li><span class="font-bold">Contraction Practice (Pronunciation):</span> You successfully practiced blending `I would have to` into the faster, more natural-sounding `I'd have to` (`I daft-ta`).
+                    <br><span class="text-gray-600 text-xs italic">Teacher quote: "Oh, you sound London! It's good."</span></li>
+                <li><span class="font-bold">Fluency in Imaginary Scenarios:</span> You constructed a fluid sentence combining a second conditional with the new modals:
+                    <br><span class="text-gray-800 font-semibold text-sm sm:text-base">"If I <strong>could</strong> have one wish... I <strong>would</strong> speak English <strong>fluently</strong>."</span>
+                    <br><span class="text-gray-600 text-xs italic">Teacher quote: "Fluently. That's good."</span></li>
+                <li><span class="font-bold">Understanding of Context:</span> You correctly identified the situation when choosing conditionals, showing awareness of the purpose of the language:
+                    <br><span class="text-gray-800 font-semibold text-sm sm:text-base">Teacher: "If I miss my bus, I'll have to take a taxi." Is that Punctual Pam or Tardy Terry?</span>
+                    <br><span class="text-gray-800 font-semibold text-sm sm:text-base">Kubilay: "Tardy Terry."</span>
+                    <br><span class="text-gray-600 text-xs italic"> (You understood that Terry's action is likely/regular (<strong>First Conditional</strong>), while Pam's (who is punctual) would be impossible/imagined (<strong>Second Conditional</strong>).)</span></li>
+            </ul>
+        </section>
+
+        <section id="mistakes" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Mistake Analysis: Learning & Growing 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some common errors observed in this lesson. Remember, mistakes are a natural part of learning!</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Pronunciation Errors (V/W Consonants)</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Words for practice: <span style="color: #D0021B;">Will</span>, <span style="color: #D0021B;">Won't</span>, <span style="color: #D0021B;">Water</span>, <span style="color: #D0021B;">Weekend</span>.</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">How to say them: <span class="font-bold" style="color: #1E8449;">/wɪl/</span>, <span class="font-bold" style="color: #1E8449;">/woʊnt/</span>, <span class="font-bold" style="color: #1E8449;">/ˈwɔtər/</span>, <span class="font-bold" style="color: #1E8449;">/ˈwiːkend/</span></p>
+                    </div>
+                    <p class="text-gray-600 text-sm mt-4"><strong>Teacher's Note:</strong> You sometimes confuse the 'V' sound (vibration, lower lip to teeth) with the 'W' sound (round lips, like kissing). Keep practicing these minimal pairs to make your speech clearer!</p>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Grammar & Subject-Verb Agreement</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "My manager, <span style="color: #D0021B;">don't</span> think."</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: "My manager <span class="font-bold" style="color: #1E8449;">doesn't</span> think." (Remember that 'My manager' is <strong>He/She</strong>, so we use <strong>does</strong> or <strong>doesn't</strong> in the simple present.)</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "I <span style="color: #D0021B;">would not happy</span>."</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: "I <span class="font-bold" style="color: #1E8449;">wouldn't be happy</span>." (The verb <strong>to be</strong> is necessary here: would + be + adjective.)</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "I am, <span style="color: #D0021B;">communicate</span>… I, I am… I'm <span style="color: #D0021B;">speaking</span>, with, <span style="color: #D0021B;">that</span>… some directors."</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: "I <span class="font-bold" style="color: #1E8449;">communicate with</span> some directors." (Use <strong>Simple Present</strong> for routines, remove 'that' and the unnecessary commas, and use the correct preposition: <strong>communicate with</strong>.)</p>
+                    </div>
+                    <p class="text-gray-600 text-sm mt-4"><strong>Teacher's Note:</strong> Review the difference between <strong>Simple Present</strong> (for habits, routines, facts) and <strong>Present Continuous</strong> (for things happening now). Also, keep practising the Subject-Verb Agreement table below!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="grammar-review" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Grammar Review: Conditionals and Modals 📝</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here's a quick review of the structures we focused on today. Pay close attention to the tenses in the <strong>If clause</strong>—this is what tells the listener if the situation is real or imagined!</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Conditional Forms (Verb Tenses)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-md overflow-hidden">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6 text-left">Conditional</th>
+                                    <th class="py-3 px-6 text-left">IF Clause (Condition)</th>
+                                    <th class="py-3 px-6 text-left">Result Clause (Outcome)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 text-sm">
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap"><strong>First</strong> (Real/Possible)</td>
+                                    <td class="py-3 px-6 text-left">If + Simple Present <br> <span class="font-bold">Example:</span> If I have time,</td>
+                                    <td class="py-3 px-6 text-left">Will / Won't + Verb 1 <br> <span class="font-bold">Example:</span> I will study.</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap"><strong>Second</strong> (Unreal/Imagined)</td>
+                                    <td class="py-3 px-6 text-left">If + Simple Past <br> <span class="font-bold">Example:</span> If I had time,</td>
+                                    <td class="py-3 px-6 text-left">Would / Wouldn't + Verb 1 <br> <span class="font-bold">Example:</span> I would travel.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Auxiliary Verb Agreement (Simple Present Tense)</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">This helps with forming negatives and questions in the <strong>If clause</strong> of the First Conditional:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">I, You, We, They:</span> Use <strong>do</strong> / <strong>don't</strong> (e.g., If I <strong>don't</strong> work...)</li>
+                        <li><span class="font-bold">He, She, It:</span> Use <strong>does</strong> / <strong>doesn't</strong> (e.g., If my boss <strong>doesn't</strong> give...)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="nextsteps" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Your Next Steps: Keep Growing! 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some extra resources to help you solidify the use of conditionals and target pronunciation.</p>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Additional Resources for Practice 📚</h3>
+            <p class="text-gray-700 mb-4 text-sm sm:text-base">Here are some extra resources to help you solidify the use of conditionals and target pronunciation.</p>
+
+            <div class="space-y-4">
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Video Explainer: First, Second, and Third Conditionals</p>
+                    <div class="video-container">
+                        <a href="https://www.youtube.com/watch?v=0qGX5ZGRgYk" target="_blank" class="block relative">
+                            <img src="https://img.youtube.com/vi/0qGX5ZGRgYk/hqdefault.jpg" alt="Thumbnail for Conditional video" class="image-resource"/>
+                            <div class="play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Video Practice: Pronunciation of W and V (Minimal Pairs)</p>
+                    <div class="video-container">
+                        <a href="https://www.youtube.com/watch?v=RB8cDdvj5uc" target="_blank" class="block relative">
+                            <img src="https://img.youtube.com/vi/RB8cDdvj5uc/hqdefault.jpg" alt="Thumbnail for W and V Pronunciation video" class="image-resource"/>
+                            <div class="play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Reading: A London Dream: Kubilay’s Chaotic Week</p>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">This fictional article uses the <strong>First</strong> and <strong>Second Conditionals</strong> to talk about your recent work situation and future plans.</p>
+                    <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                        Last week, Kubilay found himself swimming in chaos. His boss quit, his manager went to Bali, and suddenly, he <strong>was communicating</strong> directly with the directors. "It's <strong>un</strong>fair," he thought. "If I <strong>do</strong> all this work, I <strong>will get</strong> a promotion!" He knows if he <strong>improves</strong> his English, he <strong>will be</strong> ready.
+                        <br><br>
+                        But the real chaos is the current job. He told his friend: "If the company <strong>doubled</strong> my pay, I <strong>would</strong> quit! Actually, if I <strong>had</strong> a clear, good job, I <strong>wouldn't</strong> have any money worries."
+                        <br><br>
+                        He’s been working so much he feels <strong>unwell</strong>. He misses his time with Semin. <strong>If</strong> his technical knowledge <strong>wasn't</strong> so high, he <strong>would be</strong> <strong>un</strong>able to manage the workload.
+                        <br><br>
+                        "I'm really <strong>un</strong>sure about the future," he admitted. "If I <strong>knew</strong> the immigration rules <strong>would change</strong> to 10 years, I <strong>might not</strong> have come to London. But, I <strong>will</strong> keep applying for jobs. If a better one <strong>comes</strong>, I <strong>will take</strong> it, because my managers <strong>wouldn't have</strong> a problem firing me anyway."
+                        <br><br>
+                        He also mused on the idea of being <strong>tardy</strong>. He is usually <strong>punctual</strong>, but sometimes, "If I <strong>am</strong> late to work, I <strong>will have to</strong> tell my boss!" His immediate plan: if he <strong>can</strong> <strong>sleep in</strong> tomorrow (which he <strong>will</strong>, as he starts at 11 AM), he <strong>will</strong> meet his friend in Shoreditch and try not to <strong>talk shit about</strong> his chaotic boss.
+                    </p>
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3 mt-4">Definitions from the Reading</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">Unsure:</span> Not certain or definite.</li>
+                        <li><span class="font-bold">Tardy:</span> Late or slow.</li>
+                        <li><span class="font-bold">Punctual:</span> On time; not late.</li>
+                        <li><span class="font-bold">Chaotic:</span> In a state of confusion or disorder.</li>
+                        <li><span class="font-bold">Talk shit about:</span> (Informal/Slang) To gossip or speak negatively about someone.</li>
+                        <li><span class="font-bold">Sleep in:</span> To sleep later than usual.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="next-class-info" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Next Class Information 📅</h2>
+            <p class="text-gray-700 text-center text-sm sm:text-base leading-relaxed">Our next class is scheduled for <strong>Next Wednesday at 5 PM</strong> (17:00). We will begin by reviewing <strong>Modal Verbs</strong> (should, might, could) and then move on to <strong>Past Simple</strong> and <strong>Habits/Routines</strong> to prepare you for the GESE comparison topics.</p>
+        </section>
+    </main>
+</body>
+</html>
