@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubilay's Lesson Feedback</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/TQ8mdtg.png"> <!-- Favicon link updated -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #E6E6FA; color: #333333; } /* Calming lavender background */
+        .chart-container { position: relative; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; height: 300px; max-height: 350px; }
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #E6E6FA; } /* Scrollbar track matches new background */
+        ::-webkit-scrollbar-thumb { background: #4A90E2; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FFD700; }
+        .bg-accent-1 { background-color: #4A90E2; }
+        .text-accent-1 { color: #4A90E2; }
+        .bg-accent-2 { color: #6B8E23; }
+        .text-accent-2 { color: #6B8E23; }
+        .bg-error-light { background-color: #F8D7DA; }
+        .text-error-dark { color: #D0021B; }
+        .bg-success-light { background-color: #D4EDDA; }
+        .text-success-dark { color: #1E8449; }
+        .border-accent-1 { border-color: #4A90E2; }
+        .text-muted-purple { color: #8A2BE2; }
+        .video-container {
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f3f4f6; /* Tailwind gray-100 */
+        }
+        .video-container a {
+            display: block;
+            position: relative;
+            cursor: pointer;
+        }
+        .video-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            min-height: 150px; /* Ensure visibility on mobile */
+            object-fit: cover;
+        }
+        /* Custom styles for the YouTube logo placeholder */
+        .youtube-logo-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 200px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #FF0000;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+        .youtube-logo-overlay span {
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-accent-1">Kubilay's Progress Dashboard ✨</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#snapshot" class="hover:text-accent-2 transition duration-300">Overview</a></li>
+                <li><a href="#language" class="hover:text-accent-2 transition duration-300">Language</a></li>
+                <li><a href="#strengths" class="hover:text-accent-2 transition duration-300">Strengths</a></li>
+                <li><a href="#mistakes" class="hover:text-accent-2 transition duration-300">Mistakes</a></li>
+                <li><a href="#grammar-review" class="hover:text-accent-2 transition duration-300">Grammar Review</a></li>
+                <li><a href="#nextsteps" class="hover:text-accent-2 transition duration-300">Next Steps</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-8 md:p-12 max-w-4xl">
+        <section id="intro" class="text-center mb-10 md:mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3">Your Lesson Feedback: A Journey of Growth! 🚀</h2>
+            <p class="text-base sm:text-lg text-gray-600 leading-relaxed">Kubilay, this report highlights your amazing session focused on the <strong>First and Second Conditionals</strong> and how to use them for real and imaginary situations. The core goal was moving from simple sentences to creating <strong>long conditional chains</strong> that link multiple ideas together!</p>
+        </section>
+
+        <section id="snapshot" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Lesson Overview 📊</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">This section gives you an overview of our conversation today, showing the main topic we covered.</p>
+
+            <div class="flex flex-col items-center justify-center">
+                <div class="mb-4 text-center">
+                    <p class="text-base sm:text-lg text-gray-800 font-bold mb-2">Lesson Date: October 2, 2025</p>
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle mr-2 text-accent-1"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Total Lesson Duration:
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle ml-2 text-accent-2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </p>
+                    <p class="text-4xl sm:text-5xl font-extrabold text-muted-purple">2h 5m</p>
+                    <p class="text-gray-500 text-sm sm:text-base">(125 minutes of active time)</p>
+                </div>
+            </div>
+            <p class="text-gray-700 mt-8 text-center text-sm sm:text-base leading-relaxed">You showed excellent understanding today. The core challenge was transforming knowledge of the rules (which you know well!) into quick, automatic, and fluid speaking. The focus on <strong>conditional chains</strong> was a big step towards achieving this conversational fluency.</p>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mt-10 mb-4 text-center">What We Talked About: Topic Summary 🎯</h3>
+            <p class="text-gray-700 text-center text-sm sm:text-base leading-relaxed">Today, we drilled the difference between the <strong>First Conditional</strong> (for real/possible future events, e.g., "If I pass the exam, I <strong>will</strong> celebrate.") and the <strong>Second Conditional</strong> (for imagined/unlikely situations, e.g., "If I <strong>were</strong> rich, I <strong>would</strong> travel everywhere."). We used these to create long <strong>conditional chains</strong>—multi-step stories (dominoes) where the result of one conditional becomes the condition of the next.</p>
+        </section>
+
+        <section id="language" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Language Highlights: Conditional Toolkit 🛠️</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are the key structures you learned and practiced:</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Second Conditional (Imaginary) Rule</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">For unlikely or imagined situations, you must use <strong>were</strong> for the verb 'to be' in the 'if' clause, even with 'I' or 'he' (the subjunctive mood). This is formal and required for B1 exams!</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">Correct:</span> "If I <strong>were</strong> a genius, I <strong>would</strong> be a scientist."</li>
+                        <li><span class="font-bold">Correct:</span> "If he <strong>were</strong> angry with me, I <strong>would</strong> probably leave."</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Key Conditional Phrasing</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">These phrases improve your speaking fluency:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">Passive Voice (Advanced):</span> "I wouldn't like to have my picture <strong>taken</strong> all the time." (Used to talk about things done to you.)</li>
+                        <li><span class="font-bold">Fact vs. Opinion Trigger:</span> Use <strong>When</strong> for a 100% certain action, use <strong>If</strong> for a possible action.</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">New Vocabulary & Expressions</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">Bless You:</span> What you must say when someone sneezes!</li>
+                        <li><span class="font-bold">Rattling Cough:</span> A deep cough often associated with old age.</li>
+                        <li><span class="font-bold">Blow Out:</span> The action for extinguishing a flame (e.g., "blow out the candles").</li>
+                        <li><span class="font-bold">Blow Up:</span> The action for inflating a balloon or something exploding.</li>
+                        <li><span class="font-bold">Smash:</span> To break something glass (e.g., "smash a window").</li>
+                        <li><span class="font-bold">Commiserations:</span> (Opposite of congratulations). A phrase used when offering sympathy after someone's bad news (e.g., losing a match, quitting a job).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="strengths" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Your Strengths: What You Did Great! ⭐</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base leading-relaxed">The conditional structures are very natural for you now, which is a huge achievement for the A2/B1 level!</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm sm:text-base pl-4">
+                <li><span class="font-bold">Conditional Fluency:</span> You smoothly transitioned between the First Conditional (possible) and the Second Conditional (imaginary/impossible) without hesitation.</li>
+                <li><span class="font-bold">Long Conditional Chains:</span> You built an impressive imaginary chain of seven linked sentences (e.g., "If I win money, I'll buy an island. If I buy an island..."), demonstrating the ability to think ahead and link complex ideas fluidly.</li>
+                <li><span class="font-bold">Question Formation:</span> You asked highly relevant and well-formed questions to continue the conversation (e.g., "How did you manage to control all the people?").</li>
+                <li><span class="font-bold">Excellent Use of 'Were':</span> You consistently and correctly used "If I <strong>were</strong>..." instead of "If I was..." in the subjunctive mood, which is a key marker of advanced grammar control.</li>
+            </ul>
+        </section>
+
+        <section id="mistakes" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Mistake Analysis: Learning & Growing 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Focus on incorporating these fixed phrases and vocabulary into your next conversational chain.</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Sentence Completion</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "If I could meet anyone, I would <span style="color: #D0021B;">met</span> Jesus."</p>
+                        <p class="text-success-dark font-semibold text-sm sm:text-base">Correction: "If I could meet anyone, I would <strong style="color: #1E8449;">meet</strong> Jesus."</p>
+                        <p class="text-gray-600 text-xs italic">(Modal verbs like <strong>would</strong> are followed by the base form of the verb.)</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "If I was good at cooking, I would be <span style="color: #D0021B;">cook</span> seafood pasta..."</p>
+                        <p class="text-success-dark font-semibold text-sm sm:text-base">Correction: "If I was good at cooking, I would <strong style="color: #1E8449;">cook</strong> seafood pasta..."</p>
+                        <p class="text-gray-600 text-xs italic">(Remove 'be' before the verb. Or use: 'I would be a cook...' if referring to a job.)</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "If I was good at cooking, I would be <span style="color: #D0021B;">a chef</span>."</p>
+                        <p class="text-success-dark font-semibold text-sm sm:text-base">Correction: "If I was good at cooking, I would <strong style="color: #1E8449;">become a chef</strong>."</p>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Pronunciation & Word Form</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Word: <span style="color: #D0021B;">Goalee</span></p>
+                        <p class="text-success-dark font-semibold text-sm sm:text-base">Correction: <strong style="color: #1E8449;">Goali</strong> /'gəʊli:/</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Word: <span style="color: #D0021B;">God</span> (Football)</p>
+                        <p class="text-success-dark font-semibold text-sm sm:text-base">Correction: <strong style="color: #1E8449;">Goal</strong> /gəʊl/</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="grammar-review" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Grammar Review: Conditional Tenses 📝</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">This is the critical difference in structure. You must match the verb tense in the result clause to the tense in the 'if' clause.</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">First Conditional (Possible Future)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-md overflow-hidden">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6 text-left">Condition (If Clause)</th>
+                                    <th class="py-3 px-6 text-left">Result (Action Clause)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 text-sm">
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">If + <strong>Simple Present</strong></td>
+                                    <td class="py-3 px-6 text-left"><strong>will</strong> / <strong>won't</strong> + Base Verb</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap"><span class="font-bold">Example:</span> If I <strong>win</strong> money,</td>
+                                    <td class="py-3 px-6 text-left"><span class="font-bold">Result:</span> I <strong>will buy</strong> an island.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Second Conditional (Imaginary/Unlikely)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-md overflow-hidden">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6 text-left">Condition (If Clause)</th>
+                                    <th class="py-3 px-6 text-left">Result (Action Clause)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 text-sm">
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">If + <strong>Simple Past</strong></td>
+                                    <td class="py-3 px-6 text-left"><strong>would</strong> / <strong>wouldn't</strong> + Base Verb</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap"><span class="font-bold">Example:</span> If I <strong>bought</strong> an island,</td>
+                                    <td class="py-3 px-6 text-left"><span class="font-bold">Result:</span> I <strong>would call</strong> my friends.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="nextsteps" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Your Next Steps: Keep Growing! 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Keep developing your fluency by creating and telling longer stories.</p>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Reading Practice: Conditional Chains 📚</h3>
+            <p class="text-gray-700 mb-4 text-sm sm:text-base">Practice saying the conditional chain below out loud several times. Focus on linking the ideas smoothly using the correct tenses.</p>
+
+            <div class="space-y-4">
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">The "Muscle Man" Chain (Second Conditional)</p>
+                    <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                        If I <strong>were</strong> rich, I <strong>would eat</strong> lots of seafood every day.
+                        <br>If I <strong>ate</strong> lots of seafood, I <strong>would get</strong> fat.
+                        <br>If I <strong>got</strong> fat, I <strong>would hire</strong> a personal trainer.
+                        <br>If I <strong>hired</strong> a personal trainer, I <strong>would be</strong> muscular.
+                        <br>If I <strong>were</strong> muscular, Semin <strong>wouldn't be</strong> happy.
+                        <br>If Semin <strong>weren't</strong> happy, I <strong>would be</strong> unhappy.
+                    </p>
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Video Explainer: Second Conditional and 'Were'</p>
+                    <div class="video-container">
+                        <a href="https://www.youtube.com/watch?v=R9tFkX9tE4k" target="_blank" class="block relative">
+                            <!-- Placeholder image with YouTube logo and text -->
+                            <img src="https://placehold.co/1280x720/FF0000/ffffff?text=YouTube%20Logo" alt="Click to Watch: Second Conditional on YouTube" class="image-resource" style="filter: brightness(70%);"/>
+                            <div class="youtube-logo-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="white" width="40" height="40">
+                                    <path d="M549.655 124.083c-6.232-23.5-24.494-41.762-48.053-48.057C486.29 64 288 64 288 64S89.71 64 74.4 76.026c-23.559 6.295-41.821 24.557-48.053 48.057C16 140.384 16 256 16 256s0 115.616 10.347 131.917c6.232 23.5 24.494 41.762 48.053 48.057C89.71 448 288 448 288 448s198.29 0 213.6-12.026c23.559-6.295 41.821-24.557 48.053-48.057C560 371.616 560 256 560 256s0-115.616-10.345-131.917zM232 355V157L384 256 232 355z"/>
+                                </svg>
+                                <span class="text-white font-bold text-base">Watch on YouTube</span>
+                                <span class="text-white text-xs mt-0">Second Conditional - Subjunctive Mood</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="next-class-info" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Next Class Information 📅</h2>
+            <p class="text-gray-700 text-center text-sm sm:text-base leading-relaxed">Our next class is scheduled for <strong>Wednesday</strong> at 4 PM (16:00). We will review these conditional chains and move on to practicing <strong>Modal Verbs</strong> (could, should, might) for advanced sentence building.</p>
+        </section>
+    </main>
+</body>
+</html>
