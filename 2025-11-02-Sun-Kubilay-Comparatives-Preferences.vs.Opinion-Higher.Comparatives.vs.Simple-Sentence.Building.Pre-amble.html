@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubilay's Lesson Feedback</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/TQ8mdtg.png"> <!-- Favicon link updated -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #E6E6FA; color: #333333; } /* Calming lavender background */
+        .chart-container { position: relative; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; height: 300px; max-height: 350px; }
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #E6E6FA; } /* Scrollbar track matches new background */
+        ::-webkit-scrollbar-thumb { background: #4A90E2; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FFD700; }
+        .bg-accent-1 { background-color: #4A90E2; }
+        .text-accent-1 { color: #4A90E2; }
+        .bg-accent-2 { color: #6B8E23; }
+        .text-accent-2 { color: #6B8E23; }
+        .bg-error-light { background-color: #F8D7DA; }
+        .text-error-dark { color: #D0021B; }
+        .bg-success-light { background-color: #D4EDDA; }
+        .text-success-dark { color: #1E8449; }
+        .border-accent-1 { border-color: #4A90E2; }
+        .text-muted-purple { color: #8A2BE2; }
+        .video-container {
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f3f4f6; /* Tailwind gray-100 */
+        }
+        .video-container a {
+            display: block;
+            position: relative;
+            cursor: pointer;
+        }
+        .video-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            min-height: 150px; /* Ensure visibility on mobile */
+            object-fit: cover;
+        }
+        /* Custom styles for the YouTube logo placeholder */
+        .youtube-logo-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 200px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #FF0000;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+        .youtube-logo-overlay span {
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-accent-1">Kubilay's Progress Dashboard ✨</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#snapshot" class="hover:text-accent-2 transition duration-300">Overview</a></li>
+                <li><a href="#language" class="hover:text-accent-2 transition duration-300">Language</a></li>
+                <li><a href="#strengths" class="hover:text-accent-2 transition duration-300">Strengths</a></li>
+                <li><a href="#mistakes" class="hover:text-accent-2 transition duration-300">Mistakes</a></li>
+                <li><a href="#nextsteps" class="hover:text-accent-2 transition duration-300">Next Steps</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-8 md:p-12 max-w-4xl">
+        <section id="intro" class="text-center mb-10 md:mb-12">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-3">Your Lesson Feedback: A Journey of Growth! 🚀</h2>
+            <p class="text-base sm:text-lg text-gray-600 leading-relaxed">Kubilay, this report highlights your fantastic session focused on comparing <strong>Turkey and the UK</strong> and expressing your <strong>preferences</strong>. The core goal was mastering the use of <strong>Comparatives</strong> and integrating nuanced language like <strong>nuances</strong> and <strong>difficulties</strong>. Let's explore your great work!</p>
+        </section>
+
+        <section id="snapshot" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Lesson Overview 📊</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">This section gives you an overview of our conversation today, showing the main topic we covered.</p>
+
+            <div class="flex flex-col items-center justify-center">
+                <div class="mb-4 text-center">
+                    <p class="text-base sm:text-lg text-gray-800 font-bold mb-2">Lesson Date: November 2, 2025</p>
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle mr-2 text-accent-1"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Total Lesson Duration:
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle ml-2 text-accent-2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </p>
+                    <p class="text-4xl sm:text-5xl font-extrabold text-muted-purple">2h 46m</p>
+                    <p class="text-gray-500 text-sm sm:text-base">(166 minutes of active time)</p>
+                </div>
+            </div>
+            <p class="text-gray-700 mt-8 text-center text-sm sm:text-base leading-relaxed">Kubilay, your analysis of Turkish vs. UK culture and football showed great critical thinking! The core challenge was integrating complex grammatical forms like <strong>comparatives</strong> and <strong>conditionals</strong> (especially second conditional) into fluid conversation. You made fantastic progress, particularly with structuring your arguments with the new opinion phrases!</p>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mt-10 mb-4 text-center">What We Talked About: Topic Summary 🎯</h3>
+            <p class="text-gray-700 text-center text-sm sm:text-base leading-relaxed">We focused on building complex sentences using two main grammatical functions:
+                <br>1. <strong>Comparatives:</strong> Using adjective + <strong>-er</strong> or <strong>more/less</strong> + adjective + <strong>than</strong> to compare two things (e.g., "The Tube is <strong>more convenient than</strong> the bus.").
+                <br>2. <strong>Preferences:</strong> Stating which option you favor using <strong>I prefer</strong> or <strong>If I had to choose</strong>.
+                <br>We also reviewed how your past habits and opinions (<strong>I used to think</strong>) have changed due to your current life in London (<strong>but now I think</strong>), creating highly personalized and complex sentences necessary for the B1 level.</p>
+        </section>
+
+        <section id="language" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Language Highlights: Your New Tools! 🛠️</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Here are some key language points you used and learned today. Read through these examples!</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Opinion & Preference Structures</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">You successfully used the following structures to express your viewpoint:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><strong>Opinion Starters:</strong> "<strong>From my experience</strong>, taking the tube is..."</li>
+                        <li><strong>Conditional Preference:</strong> "<strong>If I had to choose</strong>, I would say that meatballs are tastier..."</li>
+                        <li><strong>Changed Opinion (Past vs. Present):</strong> "I <strong>used to think</strong> that living alone was better, but <strong>now I think</strong> living with family is better."</li>
+                        <li><strong>Comparison Phrase:</strong> "...is <strong>more flexible than</strong> Turkey."</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">New Vocabulary & Phrasing (The B1 Challenge)</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">You incorporated these advanced terms to add depth and detail to your comparisons:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><span class="font-bold">Nuances:</span> Concept: A small, subtle difference in meaning, opinion, or situation. Example: "There are a lot of <strong>nuances</strong> when comparing food shopping online versus in the store."</li>
+                        <li><span class="font-bold">Difficulties:</span> Concept: The noun form of 'difficult' or a specific challenging situation. Example: "There are a few <strong>difficulties</strong> with getting my old friends to reply to my calls."</li>
+                        <li><span class="font-bold">Preamble / Context:</span> Concept: Introductory information that sets the scene for your main point, giving your opinion more weight. <strong>GESE Benefit:</strong> Using the phrase "From my experience" prompts you to give more personal examples, which naturally lengthens and strengthens your arguments. Example: "<strong>From my experience</strong>, <strong>I would say</strong> that Besiktas' defense is performing better than expectations."</li>
+                        <li><span class="font-bold">Vicious Cycle / Downward Spiral:</span> Phrases used to describe continuous negative trends (e.g., <strong>energy levels decreasing</strong>).</li>
+                        <li><span class="font-bold">Temp Agency / Temporary Jobs:</span> Phrases for short-term employment (e.g., "I need a UK reference, so I might look for a job through a <strong>temp agency</strong>.").</li>
+                        <li><span class="font-bold">Isolated / Crowded:</span> Comparative adjectives for describing cities and living spaces.</li>
+                        <li><span class="font-bold">Rigid / Flexible:</span> Essential adjectives for talking about work schedules.</li>
+                        <li><span class="font-bold">It Depends:</span> A crucial phrase for showing a complex, qualified opinion.</li>
+                        <li><span class="font-bold">Commiserations:</span> (Opposite of congratulations). A phrase used when offering sympathy after someone's bad news (e.g., losing a match, quitting a job).</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-2">Advanced Conditionals (The Long Sentence)</h3>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">This is the complex argument structure you used, showing excellent control over conditional clauses:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                        <li><strong>Full Sentence Practice:</strong> "If we <strong>were to break up</strong>, I <strong>would say</strong> that living with my family <strong>would be better</strong> than living alone."</li>
+                        <li>This demonstrates the ability to talk about a <strong>hypothetical</strong> or <strong>unlikely</strong> event using the correct grammar structure (Past Simple in the 'if' clause and <strong>would</strong> in the result clause).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="strengths" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Your Strengths: What You Did Great! ⭐</h2>
+            <p class="text-700 mb-8 text-center text-sm sm:text-base leading-relaxed">Your enthusiasm for the topics, especially football and your opinions on technology, is a huge advantage. You continually seek to elaborate, which generates the complex language needed for the B1 level.</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm sm:text-base pl-4">
+                <li><span class="font-bold">Fluency in Comparatives:</span> You quickly mastered building sentences using <strong>more/less</strong> and the adjective + <strong>than</strong> structure (e.g., "London is <strong>more expensive than</strong> other cities.").</li>
+                <li><span class="font-bold">Complex Conditional Integration:</span> You successfully wove the Second Conditional into your preferences (e.g., "If I were the team manager of Besiktas, <strong>I would</strong> not allow drinking or smoking."), which is advanced and excellent for your GESE prep.</li>
+                <li><span class="font-bold">Using 'Used To' for Opinions:</span> You effectively used "I <strong>used to think</strong>..." to introduce and contrast a past opinion with your current, more mature opinion, showing a mastery of the structure taught last week.</li>
+            </ul>
+        </section>
+
+        <section id="noted-success" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Noted Success! ✨✨✨</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base leading-relaxed">The highlight of the lesson was your intellectual honesty and advanced grammatical control in constructing nuanced arguments about life changes.</p>
+            <ul class="list-disc list-inside text-gray-700 space-y-3 text-sm sm:text-base pl-4">
+                <li><span class="font-bold">The Three-Part Argument (Maximum Linguistic Control):</span>
+                    <br><span class="text-gray-800 font-semibold text-sm sm:text-base">"I <strong>used to think</strong> that living alone is better... but <strong>now that I'm older</strong>... I would say that <strong>from my experience</strong>, living with family is better, because <strong>I miss my family</strong>, and living alone <strong>made</strong> me feel <strong>lonelier</strong>."</span>
+                    <br><span class="text-gray-600 text-xs italic"> (This sentence successfully contrasts a past opinion with your current reality and clearly links your emotional context, noting that living alone caused him to feel lonely.)</span></li>
+                <li><span class="font-bold">Advanced Vocabulary Application:</span> You immediately grasped and correctly applied the terms <strong>nuances</strong> and <strong>difficulties</strong> when discussing the complexities of comparing online and in-store shopping.</li>
+                <li><span class="font-bold">Mastery of Irregular Pronunciation:</span> You successfully drilled the difficult 'Worse vs. Worst' distinction, demonstrating high phonetic awareness.</li>
+            </ul>
+        </section>
+
+        <section id="mistakes" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Mistake Analysis: Learning & Growing 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">Focus on these two key areas to improve accuracy and clarity at the B1 level:</p>
+
+            <div class="space-y-6">
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3 text-center">Superlatives & Irregular Adjectives</h3>
+                    <p class="text-gray-700 mb-4 text-sm sm:text-base">Be careful not to mix up the comparative and superlative forms, especially with irregular adjectives (Good/Bad):</p>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-md overflow-hidden">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-4 text-left">Base Form</th>
+                                    <th class="py-3 px-4 text-left">Comparative (2 things)</th>
+                                    <th class="py-3 px-4 text-left">Superlative (1 of many)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700 text-sm">
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-4 text-left whitespace-nowrap">Good</td>
+                                    <td class="py-3 px-4 text-left"><strong>Better</strong></td>
+                                    <td class="py-3 px-4 text-left"><strong>Best</strong></td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                    <td class="py-3 px-4 text-left whitespace-nowrap">Bad</td>
+                                    <td class="py-3 px-4 text-left"><strong>Worse</strong></td>
+                                    <td class="py-3 px-4 text-left"><strong>Worst</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <h3 class="font-semibold text-lg sm:text-xl text-gray-800 mb-3">Prepositions & Articles (Places)</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">What was said: "I think vegetables in <span style="color: #D0021B;">the</span> Turkey is fresher than <span style="color: #D0021B;">the</span> UK."</p>
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Correction: "I think vegetables <strong style="color: #1E8449;">in</strong> <strong>Turkey</strong> <strong style="color: #1E8449;">are</strong> fresher than <strong style="color: #1E8449;">in</strong> the <strong>UK</strong>."</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-800 font-semibold text-sm sm:text-base">Rule Reminder:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm sm:text-base pl-4">
+                            <li>Always use <strong>the</strong> for <strong>The United Kingdom</strong> (UK) and <strong>The United States</strong> (USA).</li>
+                            <li>Do <strong>not</strong> use <strong>the</strong> for Turkey, France, Germany, etc.</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-600 text-sm mt-4"><strong>Teacher's Note:</strong> This is easy to fix: always check if the country name includes "Kingdoms," "States," or "Republics."</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="nextsteps" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Your Next Steps: Keep Growing! 🌱</h2>
+            <p class="text-gray-700 mb-8 text-center text-sm sm:text-base">We're focusing on the B1 level now. The next two words are <strong>nuances</strong> and <strong>difficulties</strong>.</p>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Additional Resources for Practice 📚</h3>
+            <p class="text-gray-700 mb-4 text-sm sm:text-base">Practice incorporating the nuanced vocabulary and compound sentences outside of class:</p>
+
+            <div class="space-y-4">
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Reading & Vocabulary: Nuances and Difficulties</p>
+                    <p class="text-gray-700 mb-2 text-sm sm:text-base">The ability to discuss <strong>nuances</strong> and <strong>difficulties</strong> is essential for high scores in the GESE exam. You can use these terms to give detailed arguments about anything.</p>
+                    <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                        Practice discussing the following points using a full sentence:
+                        <br>1. Compare London to Istanbul, explaining the <strong>nuances</strong> in traffic and transportation.
+                        <br>2. Discuss the <strong>difficulties</strong> in finding fresh, seasonal Turkish vegetables in the UK compared to Turkey.
+                        <br>3. Explain the <strong>nuances</strong> of UK football (Arsenal vs. Besiktas) regarding fan behavior or team strategy.
+                    </p>
+                </div>
+
+                <div class="resource-item p-4 bg-blue-50 rounded-md border border-blue-200">
+                    <p class="font-semibold text-gray-800 mb-2 text-base sm:text-lg">Video Explainer: Comparative Adjectives</p>
+                    <div class="video-container">
+                        <a href="https://www.youtube.com/watch?v=7hR8-Rz91eA" target="_blank" class="block relative">
+                            <!-- Placeholder image with YouTube logo and text -->
+                            <img src="https://placehold.co/1280x720/FF0000/ffffff?text=YouTube%20Logo" alt="Click to Watch: Comparative Adjectives on YouTube" class="image-resource" style="filter: brightness(70%);"/>
+                            <div class="youtube-logo-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="white" width="40" height="40">
+                                    <path d="M549.655 124.083c-6.232-23.5-24.494-41.762-48.053-48.057C486.29 64 288 64 288 64S89.71 64 74.4 76.026c-23.559 6.295-41.821 24.557-48.053 48.057C16 140.384 16 256 16 256s0 115.616 10.347 131.917c6.232 23.5 24.494 41.762 48.053 48.057C89.71 448 288 448 288 448s198.29 0 213.6-12.026c23.559-6.295 41.821-24.557 48.053-48.057C560 371.616 560 256 560 256s0-115.616-10.345-131.917zM232 355V157L384 256 232 355z"/>
+                                </svg>
+                                <span class="text-white font-bold text-base">Watch on YouTube</span>
+                                <span class="text-white text-xs mt-0">Comparative Adjectives (More/Less/-er)</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="next-class-info" class="mb-10 md:mb-12 bg-white rounded-lg shadow-md p-6 sm:p-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Next Class Information 📅</h2>
+            <p class="text-gray-700 text-center text-sm sm:text-base leading-relaxed">Our next class is scheduled for <strong>Thursday at 5 PM</strong> (17:00). We will continue our work on comparing things and stating your opinions, focusing heavily on building those long, nuanced sentences!</p>
+        </section>
+    </main>
+</body>
+</html>
